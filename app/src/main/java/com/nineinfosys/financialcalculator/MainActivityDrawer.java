@@ -31,6 +31,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -399,6 +400,23 @@ public class MainActivityDrawer extends AppCompatActivity {
         super.onStart();
         Log.e("ForumMainActivity:", "Starting auth listener");
         firebaseAuth.addAuthStateListener(firebaseAuthListner);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_logout) {
+            FirebaseAuth.getInstance().signOut();
+            LoginManager.getInstance().logOut();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 
