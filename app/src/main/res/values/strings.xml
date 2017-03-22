@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_id">FinancialCalculator</string>
+    <string name="app_name">Financial Calculator</string>
+
+
+    //for calcualtor string
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="web_address">https://geniusnineapps.azurewebsites.net</string>
+
+    <string name="menu_settings">Settings</string>
+
+    <string name="button0">0</string>
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="buttonAdd">+</string>
+    <string name="buttonSubtract">-</string>
+    <string name="buttonMultiply">*</string>
+    <string name="buttonDivide">/</string>
+    <string name="buttonToggleSign">+/-</string>
+    <string name="buttonDecimalPoint">.</string>
+    <string name="buttonEquals">=</string>
+    <string name="buttonClear">C</string>
+    <string name="buttonClearMemory">MC</string>
+    <string name="buttonAddToMemory">M+</string>
+    <string name="buttonSubtractFromMemory">M-</string>
+    <string name="buttonRecallMemory">MR</string>
+    <string name="buttonSquareRoot">√</string>
+    <string name="buttonSquared">x²</string>
+    <string name="buttonInvert">1/x</string>
+    <string name="buttonSine">sin</string>
+    <string name="buttonCosine">cos</string>
+    <string name="buttonTangent">tan</string>
+
+    <string name="facebook_app_id">267933240296176</string>
+    <string name="fb_login_protocol_scheme">fb267933240296176</string>
+    <string name="action_logout">Logout</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6819279779322408/2629200570</string>
+    <string name="ads_app_id">ca-app-pub-6819279779322408~8675734175</string>
+</resources>

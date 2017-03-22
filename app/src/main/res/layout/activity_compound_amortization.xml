@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_loan_amortization"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+  >   <include
+    android:id="@+id/app_bar"
+    layout="@layout/app_bar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#dce5f4">
+        <TextView
+            android:id="@+id/AmortizationIdname"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="16dip"
+            android:textStyle="bold"
+            android:layout_weight="1.1"
+            android:text="No."
+            android:gravity="center"
+            android:textColor="@color/text_color"
+           >
+        </TextView>
+
+        <TextView
+            android:id="@+id/AmortizationInterestname"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="14dip"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="EMI"
+            android:textColor="@color/text_color"
+            android:gravity="center">
+        </TextView>
+        <TextView
+            android:id="@+id/AmortizationPrincipalnmae"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="16dip"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="Interests"
+            android:textColor="@color/text_color"
+            android:gravity="center">
+        </TextView>
+        <TextView
+            android:id="@+id/AmortizationRemainingBalancename"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="16dip"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="Balance"
+            android:textColor="@color/text_color"
+            android:gravity="center">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewAmortization"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</LinearLayout>
+        </ScrollView>
+    </RelativeLayout>

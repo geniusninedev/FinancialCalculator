@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivityDrawer">
+
+
+    <item
+        android:id="@+id/fullreport"
+        android:title="Full Report"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+
+
+
+    <!--<item
+        android:id="@+id/action_chart"
+        android:icon="@drawable/ic_piachart"
+        android:title="Chart"
+        android:orderInCategory="5"
+        app:showAsAction="ifRoom|collapseActionView" />-->
+</menu>
+
+

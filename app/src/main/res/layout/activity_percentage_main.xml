@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+>
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="What is the X% of Y?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPerecentquestion"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="7dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/main_text_color" />
+
+                <Button
+                    android:id="@+id/buttonPerecentReset1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/btn_color"
+                    android:textStyle="bold"
+                    android:text="RESET"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/edittextpercentageX1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/editbox_background"
+                    android:digits="0123456789."
+                    android:ems="10"
+                    android:filterTouchesWhenObscured="true"
+                    android:inputType="number" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewpercentof"
+                    android:textStyle="bold"
+                    android:textColor="@color/main_text_color"
+                    android:text="% of"/>
+
+                <EditText
+                    android:id="@+id/edittextpercentageY1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/editbox_background"
+                    android:digits="0123456789."
+                    android:ems="10"
+                    android:filterTouchesWhenObscured="true"
+                    android:inputType="number" />
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/percentageOnelayout"
+                android:visibility="gone"
+                android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluex1"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluepercent1"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:text=" % of "
+                        android:textColor="@color/main_text_color"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluey1"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewis"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        android:text=" is: "
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewAnswer1"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:text="What percent is X of Y?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPerecentquestion1"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="@color/main_text_color"
+              />
+
+                <Button
+                    android:id="@+id/buttonPerecentReset2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/btn_color"
+                    android:textStyle="bold"
+                    android:text="RESET"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/edittextpercentageX2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/editbox_background"
+                    android:digits="0123456789."
+                    android:ems="10"
+                    android:filterTouchesWhenObscured="true"
+                    android:inputType="number" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewof"
+                    android:textStyle="bold"
+                    android:textColor="@color/main_text_color"
+                    android:text="of"/>
+
+                <EditText
+                    android:id="@+id/edittextpercentageY2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/editbox_background"
+                    android:digits="0123456789."
+                    android:ems="10"
+                    android:filterTouchesWhenObscured="true"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/percentageTwolayout"
+                android:visibility="gone"
+                android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluex2"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluepercent2"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        android:text=" of "
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluey2"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewis2"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/main_text_color"
+                        android:text=" is: "
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewAnswer2"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:text="What's percent change X to Y?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPerecentquestion2"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="7dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/main_text_color"
+                   />
+
+                <Button
+                    android:id="@+id/buttonPerecentReset3"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/btn_color"
+                    android:textStyle="bold"
+                    android:text="RESET"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14dp" />
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewfrom"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/main_text_color"
+
+                    android:text="From"/>
+                <EditText
+                    android:id="@+id/edittextpercentageX3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/editbox_background"
+                    android:digits="0123456789."
+                    android:ems="10"
+                    android:filterTouchesWhenObscured="true"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewto"
+                    android:textStyle="bold"
+                    android:textColor="@color/main_text_color"
+                    android:text="To"/>
+
+                <EditText
+                    android:id="@+id/edittextpercentageY3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/editbox_background"
+                    android:digits="0123456789."
+                    android:ems="10"
+                    android:filterTouchesWhenObscured="true"
+                    android:inputType="number" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/percentagethirdlayout"
+                android:visibility="gone"
+                android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluepercent3"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/main_text_color"
+                        android:textSize="15dp"
+                        android:text="From "
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluex3"
+                        android:textColor="@color/main_text_color"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewto3"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        android:text=" to "
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewvaluey3"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/main_text_color"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewis3"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:textColor="@color/main_text_color"
+                        android:text=" change is: "
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewAnswer3"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    </RelativeLayout>

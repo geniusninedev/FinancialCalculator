@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/grp1" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/DashBord"
+            android:icon="@drawable/btn_home"
+            android:title="Feeds" />
+    </group>
+    <group android:id="@+id/grp2" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/LoanCalcualtor"
+            android:icon="@drawable/ic_loan"
+            android:title="Loan Calculator" />
+    </group>
+
+    <group android:id="@+id/grp3" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/PaymentCalcualtor"
+            android:icon="@drawable/ic_payment"
+            android:title="Payment Calculator" />
+
+    </group>
+
+
+    <group android:id="@+id/grp4" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/PersonalLoanCalcualtor"
+            android:icon="@drawable/ic_personalloan"
+            android:title="Personal Loan Calculator" />
+
+    </group>
+    <group android:id="@+id/grp5" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/BusinessLoanCalcualtor"
+            android:icon="@drawable/ic_business"
+            android:title="Business Loan Calculator " />
+
+    </group>
+    <group android:id="@+id/grp6" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/Calcualtor"
+            android:icon="@drawable/ic_calcualtor"
+            android:title="Calculator" />
+    </group>
+    <group android:id="@+id/grp7" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/PercentageCalcualtor"
+            android:icon="@drawable/ic_percentage"
+            android:title="Percentage Calcualtor" />
+    </group>
+    <group android:id="@+id/grp8" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/CompoundInterestCalculator"
+            android:icon="@drawable/ic_compound"
+            android:title="Compound Interest Calculator" />
+    </group>
+
+  <item
+           android:id="@+id/MarginCalculator"
+           android:title="Margin Calculator"
+           android:icon="@drawable/ic_margins">
+   <menu>
+
+  <item
+       android:id="@+id/ProfitMarginCalculator"
+       android:icon="@drawable/ic_profit"
+       android:title="Profit Margin Calculator" />
+   <item
+       android:id="@+id/StockTradingMarginCalculator"
+       android:icon="@drawable/ic_stock"
+       android:title="Stock Trading Margin Calculator" />
+   <item
+       android:id="@+id/CurrencyExchangeMarginCalculator"
+       android:icon="@drawable/ic_currecny"
+       android:title="Currency Exchange Margin Calculator" />
+   </menu>
+    </item>
+    <item
+           android:id="@+id/Communicate"
+           android:title="Communicate" >
+           <menu>
+
+  <item
+       android:id="@+id/Share"
+       android:icon="@drawable/btn_share"
+       android:title="Share" />
+   <item
+       android:id="@+id/AppStore"
+       android:icon="@drawable/btn_app"
+       android:title="App Store" />
+   <item
+       android:id="@+id/GetApps"
+       android:icon="@drawable/btn_get_app"
+       android:title="Get your own Apps" />
+   <item
+       android:id="@+id/RateUs"
+       android:icon="@drawable/btn_rate_us"
+       android:title="Rate Us and Leave Feedback" />
+
+</menu>
+    </item>
+</menu>
