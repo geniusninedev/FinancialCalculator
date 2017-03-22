@@ -405,26 +405,10 @@ public class MainActivityDrawer extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_logout) {
-            FirebaseAuth.getInstance().signOut();
-            LoginManager.getInstance().logOut();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 
     protected void syncContactsWithFirebase(){
@@ -479,6 +463,23 @@ public class MainActivityDrawer extends AppCompatActivity {
         task.execute();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_logout) {
+            closeapp();
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
     public  void closeapp(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage("Are you sure you want to close App?");
@@ -488,7 +489,8 @@ public class MainActivityDrawer extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
 
-                        finish();
+                        FirebaseAuth.getInstance().signOut();
+                        LoginManager.getInstance().logOut();
                     }
                 });
 
@@ -504,6 +506,8 @@ public class MainActivityDrawer extends AppCompatActivity {
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+
+
 
 
     @Override
