@@ -425,13 +425,7 @@ public class MainActivityDrawer extends AppCompatActivity {
                         } catch (Exception e) {
 
                         }
-
-
-
-                    }
-
-
-
+         }
                     runOnUiThread(new Runnable() {
 
                         @Override
