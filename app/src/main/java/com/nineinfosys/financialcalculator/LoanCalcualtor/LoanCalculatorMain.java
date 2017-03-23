@@ -253,7 +253,7 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.buttonLoanEmail:
-                String message="Loan Amount:"+loanAmount+"\n Interest Rate:"+interestRate+"\n Loan Period:"+loanPeriod+"\n Monthly Payment:"+LoanMonthlyPayment+"\n Total Interest Amount:"+LoanInterest+"\n Total Payment:"+LoanTotalPayment+"\nAnnual Payment:"+LoanAnnualPayment;
+                String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(LoanMonthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(LoanInterest)+"\n Total Payment:"+new DecimalFormat("##.##").format(LoanTotalPayment)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(LoanAnnualPayment);
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                 email.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");
