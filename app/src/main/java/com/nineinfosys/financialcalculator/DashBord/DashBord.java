@@ -75,7 +75,7 @@ public class DashBord extends Fragment {
                 try{
 
                     try {
-                        URL url = new URL("http://www.womenshealthandfitness.com.au/component/obrss/weight-loss");
+                        URL url = new URL("http://www.economist.com/sections/business-finance/rss.xml");
                         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                         factory.setNamespaceAware(false);
                         final XmlPullParser xpp = factory.newPullParser();

@@ -81,7 +81,7 @@ public class MainActivityDrawer extends AppCompatActivity {
     FragmentTransaction mFragmentTransaction;
     ImageView profilePictureView;
     TextView Name,email;
-    private FloatingActionButton fab;
+
    public Toolbar toolbar;
     Intent intent;
     @Override
@@ -119,15 +119,7 @@ public class MainActivityDrawer extends AppCompatActivity {
         /**
          * Setup click events on the Navigation View Items.
          */
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivityDrawer.this,"This Is Under Consturtion",Toast.LENGTH_LONG).show();
-                /*Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
-                startActivity(intent);*/
-            }
-        });
+
 
 
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -402,12 +394,6 @@ public class MainActivityDrawer extends AppCompatActivity {
         Log.e("ForumMainActivity:", "Starting auth listener");
         firebaseAuth.addAuthStateListener(firebaseAuthListner);
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
 
 
@@ -464,6 +450,13 @@ public class MainActivityDrawer extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -472,7 +465,8 @@ public class MainActivityDrawer extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
-            closeapp();
+            FirebaseAuth.getInstance().signOut();
+            LoginManager.getInstance().logOut();
 
         }
 
@@ -483,14 +477,12 @@ public class MainActivityDrawer extends AppCompatActivity {
     public  void closeapp(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage("Are you sure you want to close App?");
-        alertDialogBuilder.setCancelable(false);
         alertDialogBuilder.setPositiveButton("Yes",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
 
-                        FirebaseAuth.getInstance().signOut();
-                        LoginManager.getInstance().logOut();
+                        finish();
                     }
                 });
 
@@ -504,9 +496,9 @@ public class MainActivityDrawer extends AppCompatActivity {
 
         //Showing the alert dialog
         AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
     }
-
 
 
 
@@ -514,28 +506,8 @@ public class MainActivityDrawer extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch(keyCode){
             case KeyEvent.KEYCODE_BACK:
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setMessage("Are you sure you want to close App?");
-                alertDialogBuilder.setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface arg0, int arg1) {
 
-                                finish();
-                            }
-                        });
-
-                alertDialogBuilder.setNegativeButton("No",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface arg0, int arg1) {
-
-                            }
-                        });
-
-                //Showing the alert dialog
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
+                closeapp();
                 return true;
         }
         return super.onKeyDown(keyCode, event);

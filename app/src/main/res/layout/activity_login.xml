@@ -18,22 +18,24 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
         <TextView
-            android:text="Financial Calculator"
-            android:gravity="center"
-            android:textSize="30dp"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:textColor="#059733"
-            android:id="@+id/textView" />
+            android:gravity="center"
+            android:text="Financial Calculator"
+            android:textColor="@color/text_color"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
         <com.pkmmte.view.CircularImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/imageView"
-
             app:border="true"
+            android:src="@mipmap/ic_financial"
             android:layout_marginTop="20dp"
             app:border_color="#EEEEEE"
             app:border_width="2dp"
@@ -49,7 +51,7 @@
        />
 
         <TextView
-            android:text="“Exercise Is A Celebration Of What Your Body Can Do .Not A Punishment For What You Ate.”"
+            android:text="“Financial peace isn't the acquisition of stuff. It's learning to live on less than you make, so you can give money back and have money to invest. You can't win until you do this..”"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
