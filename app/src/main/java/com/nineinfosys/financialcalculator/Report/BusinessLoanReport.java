@@ -302,11 +302,7 @@ public class BusinessLoanReport extends AppCompatActivity implements OnChartValu
         String str=(new DecimalFormat("##.##").format(TotalPayment));
         SpannableString s = new SpannableString("Total Payment\n"+"(Principal)"+strprincipal+"+"+"(Interest)"+strInterest+"="+str);
          s.setSpan(new RelativeSizeSpan(1.7f), 0, 14, 0);
-      //  s.setSpan(new StyleSpan(Typeface.NORMAL), 14, s.length() - 14, 0);
-        //s.setSpan(new ForegroundColorSpan(Color.GRAY), 14, s.length() - 15, 0);
-        //s.setSpan(new RelativeSizeSpan(.8f), 14, s.length() - 15, 0);
-        // s.setSpan(new StyleSpan(Typeface.ITALIC), s.length() - 14, s.length(), 0);
-        //s.setSpan(new ForegroundColorSpan(ColorTemplate.getHoloBlue()), s.length() - 14, s.length(), 0);
+
         return s;
     }
 
@@ -324,9 +320,9 @@ public class BusinessLoanReport extends AppCompatActivity implements OnChartValu
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-           // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-           // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 

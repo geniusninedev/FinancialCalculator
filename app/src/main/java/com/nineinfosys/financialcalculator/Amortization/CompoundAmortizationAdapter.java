@@ -18,7 +18,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 /**
- * Created by Dev on 18-01-2017.
+ * Created by Divya on 18-01-2017.
  */
 
 public class CompoundAmortizationAdapter extends RecyclerView.Adapter<CompoundAmortizationAdapter.ListViewHolder> {

@@ -1,5 +1,9 @@
 package com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor;
 
+
+/**
+ * Created by Divya on 4-02-2017.
+ */
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -30,12 +34,12 @@ public class LoanComparisonCalculatorMain extends AppCompatActivity implements V
     // declartaion of the designing tool and supported classes
     EditText edittextLaonAmount, edittextInterestRate, edittextLoanMonths, edittextExtraPayment, edittextPropertytax, edittextInsurance, edittextPMI, edittextPropertyPrice, editTextalertpropertyprice, edittextalertdownpayment;
     EditText editTextInterestRateSecond,editTextMonthSecond;
-    Button buttonLoanCalculate, butttonLoanAdvanced, butttonLoanBasic, buttonLoanCalcvalue, buttonloanReset, buttonLoanEmail, buttonLoanReport, buttonLoanAortization;
+    Button buttonLoanCalculate, buttonLoanCalcvalue, buttonloanReset, buttonLoanEmail, buttonLoanReport, buttonLoanAortization;
     TextView textViewMonthlyPayment, textViewTotalPayment, textViewTotalInterest, textViewAnnualPayment, textViewMortgageConstant,textViewMonthlyPaymentSecond,textViewTotalPaymentSecond,textViewTotalInterestSecond,textViewAnnualPaymentSecond,textViewMortgageConstantSecond;
-    LinearLayout advancedlayout, layoutDisplayResult,layoutwarning;
+    LinearLayout layoutDisplayResult,layoutwarning;
     Spinner spinneralerttaxtype;
     double alerttoatalLoanAmount=0.0;
-    double monthlyPayment, r, loanAmount, loanPeriod, interestRate,interestRateSecond,loanPeriodSecond;
+    double loanAmount, loanPeriod, interestRate,interestRateSecond,loanPeriodSecond;
     double LoanMonthlyPayment, LoanAnnualPayment, LoanTotalPayment, mortgageConstant, LoanInterest,LoanMonthlyPaymentSecond,LoanTotalPaymentSecond,LoanInterestSecond,LoanAnnualPaymentSecond,mortgageConstantSecond;
 
     loancalculation emi,emiSecond;
@@ -82,8 +86,6 @@ public class LoanComparisonCalculatorMain extends AppCompatActivity implements V
 
         buttonLoanCalcvalue = (Button) findViewById(R.id.buttonLoanCalcvalue);
         buttonLoanCalculate = (Button) findViewById(R.id.buttonLoanCalculate);
-       // butttonLoanBasic = (Button) findViewById(R.id.buttonLoanBasic);
-       // butttonLoanAdvanced = (Button) findViewById(R.id.buttonLoanAdvance);
         buttonloanReset = (Button) findViewById(R.id.buttonLoanReset);
         buttonLoanEmail = (Button) findViewById(R.id.buttonLoanEmail);
 
@@ -284,9 +286,9 @@ public class LoanComparisonCalculatorMain extends AppCompatActivity implements V
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-           // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-           // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 }

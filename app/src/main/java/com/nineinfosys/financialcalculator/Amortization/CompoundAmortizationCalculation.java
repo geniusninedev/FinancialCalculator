@@ -1,11 +1,14 @@
 package com.nineinfosys.financialcalculator.Amortization;
 
+/**
+ * Created by Divya on 28-02-2017.
+ */
 import android.content.Context;
 
 import java.util.ArrayList;
 
 /**
- * Created by Dev on 28-02-2017.
+ * Created by Divya on 28-02-2017.
  */
 
 public class CompoundAmortizationCalculation {
@@ -60,13 +63,6 @@ public class CompoundAmortizationCalculation {
                 results.setBalance(RemainingPrincipalAmount);
                 results.setEmi(monthlyPayment);
                 amortArray.add(results);
-
-	    		 /* results.setIntrest(currentBalance * r);
-	              results.setPrincipal(monthlyPayment - (currentBalance * r));
-	              results.setBalance(currentBalance - (monthlyPayment - (currentBalance * r))  );
-	              results.setEmi(monthlyPayment);
-	              amortArray.add(results);
-	              currentBalance = (currentBalance - (monthlyPayment - (currentBalance * r))  );   */
 
             }
             //last month

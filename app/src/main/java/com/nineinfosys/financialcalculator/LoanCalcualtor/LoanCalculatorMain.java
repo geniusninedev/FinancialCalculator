@@ -27,6 +27,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by Divya on 2-03-2017.
+ */
+
 public class LoanCalculatorMain extends AppCompatActivity implements View.OnClickListener {
     // declartaion of the designing tool and supported classes
     EditText edittextLaonAmount, edittextInterestRate, edittextLoanMonths, edittextExtraPayment, edittextPropertytax, edittextInsurance, edittextPMI, edittextPropertyPrice, editTextalertpropertyprice, edittextalertdownpayment;
@@ -53,7 +57,7 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("Loan Calcualtor");
+        getSupportActionBar().setTitle("Simple Loan Calcualtor");
 
         //initalization of designing tool
         advancedlayout = (LinearLayout) this.findViewById(R.id.advancedlayout);
@@ -66,7 +70,6 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
         edittextInterestRate = (EditText) findViewById(R.id.editTextLoanInterestRate);
 
         edittextLoanMonths = (EditText) findViewById(R.id.editTextloanmonths);
-       // edittextExtraPayment = (EditText) findViewById(R.id.editTextLoanextraPayment);
         edittextPropertytax = (EditText) findViewById(R.id.editTextPropertyTax);
         edittextInsurance = (EditText) findViewById(R.id.editTextInsurance);
         edittextPMI = (EditText) findViewById(R.id.editTextPMI);
@@ -79,8 +82,6 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
 
         buttonLoanCalcvalue = (Button) findViewById(R.id.buttonLoanCalcvalue);
         buttonLoanCalculate = (Button) findViewById(R.id.buttonLoanCalculate);
-       // butttonLoanBasic = (Button) findViewById(R.id.buttonLoanBasic);
-       // butttonLoanAdvanced = (Button) findViewById(R.id.buttonLoanAdvance);
         buttonloanReset = (Button) findViewById(R.id.buttonLoanReset);
         buttonLoanAortization = (Button) findViewById(R.id.buttonLoanAmortization);
         buttonLoanEmail = (Button) findViewById(R.id.buttonLoanEmail);
@@ -186,7 +187,7 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
                             alertpropertyprice = Integer.parseInt(editTextalertpropertyprice.getText().toString());
                             alertdownpayment = Integer.parseInt(edittextalertdownpayment.getText().toString());
                             String alertspinnertax = spinneralerttaxtype.getSelectedItem().toString().trim();
-                          //  Toast.makeText(this, "" + alertspinnertax, Toast.LENGTH_SHORT).show();
+
                             if (alertspinnertax == "Amount") {
                                 alerttoatalLoanAmount = alertpropertyprice - alertdownpayment;
 
@@ -234,7 +235,7 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.buttonLoanReport:
                 Intent i2=new Intent(this,LoanReport.class);
-               // Toast.makeText(this, " ToatalInterest" + interestRate, Toast.LENGTH_SHORT).show();
+
                 i2.putExtra("PrincipalAmount",loanAmount);
                 i2.putExtra("interestRate",interestRate);
                 i2.putExtra("loanPeriod",loanPeriod);
@@ -269,9 +270,8 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-           // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
-        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-           // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
         }
     }
 }

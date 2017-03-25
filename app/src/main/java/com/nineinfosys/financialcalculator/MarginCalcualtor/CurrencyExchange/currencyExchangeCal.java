@@ -1,5 +1,10 @@
 package com.nineinfosys.financialcalculator.MarginCalcualtor.CurrencyExchange;
 
+
+
+/**
+ * Created by Divya on 4-02-2017.
+ */
 public class currencyExchangeCal {
 	private double exchangeRate;
 	private double marginRatio;

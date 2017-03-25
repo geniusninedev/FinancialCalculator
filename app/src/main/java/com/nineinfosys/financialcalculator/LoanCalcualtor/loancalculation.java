@@ -1,6 +1,11 @@
 package com.nineinfosys.financialcalculator.LoanCalcualtor;
 
 
+/**
+ * Created by Divya on 28-02-2017.
+ */
+
+
 //loan calcultion using loanAmount,loanInterestRate and month
 public class loancalculation {
 	    

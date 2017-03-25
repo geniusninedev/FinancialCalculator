@@ -20,6 +20,10 @@ import com.nineinfosys.financialcalculator.Report.CompoundReport;
 
 import java.text.DecimalFormat;
 
+/**
+ * Created by Divya on 28-02-2017.
+ */
+
 public class CompoundCalculatorMain extends AppCompatActivity implements View.OnClickListener{
     EditText editTextCompounPrincipal,editTextCompounMonthlyDeposite,editTextCompounPeroidMonth,editTextCompounAnnualrate,editTextCompoundsperyear;
     Button buttoncompoundCalculate,buttoncompoundReset, buttonCompoundEmail, buttonCompoundReport, buttonCompoundAortization;
@@ -48,9 +52,9 @@ public class CompoundCalculatorMain extends AppCompatActivity implements View.On
         layoutcompoundresult=(LinearLayout)this.findViewById(R.id.layoutcompoundresult);
         layoutWarning=(LinearLayout)this.findViewById(R.id.layoutWarning);
 
-       // spinnerCompoundinglist=(Spinner)findViewById(R.id.spinnerinterestCompounding);
+
         editTextCompounPrincipal=(EditText)findViewById(R.id.editTextCompounPrincipal) ;
-       // editTextCompounMonthlyDeposite=(EditText)findViewById(R.id.editTextCompounMonthlyDeposite);
+
         editTextCompounPeroidMonth=(EditText) findViewById(R.id.editTextCompounPeroidMonth);
         editTextCompoundsperyear=(EditText) findViewById(R.id.editTextCompounds);
         editTextCompounAnnualrate=(EditText)findViewById(R.id.editTextCompounAnnualrate);
@@ -155,8 +159,7 @@ public class CompoundCalculatorMain extends AppCompatActivity implements View.On
 
             case R.id.buttonLoanReport:
                 Intent i2=new Intent(this,CompoundReport.class);
-                // Toast.makeText(this, " ToatalInterest" + interestRate, Toast.LENGTH_SHORT).show();
-                i2.putExtra("PrincipalAmount",PrincipalAmount);
+                                i2.putExtra("PrincipalAmount",PrincipalAmount);
                 i2.putExtra("interestRate",interestRate);
                 i2.putExtra("loanPeriod",PeriodMonth);
                 i2.putExtra("Compoundsperyear",Compoundsperyear);
@@ -182,9 +185,9 @@ public class CompoundCalculatorMain extends AppCompatActivity implements View.On
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 

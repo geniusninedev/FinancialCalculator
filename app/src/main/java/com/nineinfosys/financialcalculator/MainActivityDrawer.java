@@ -106,7 +106,7 @@ public class MainActivityDrawer extends AppCompatActivity {
         mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
         Name = (TextView) mNavigationView.getHeaderView(0).findViewById(R.id.name);
         email = (TextView) mNavigationView.getHeaderView(0).findViewById(R.id.email);
-       // profilePictureView = (ImageView) mNavigationView.getHeaderView(0).findViewById(R.id.imageView);
+
 
         /**
          * Lets inflate the very first fragment
@@ -298,8 +298,6 @@ public class MainActivityDrawer extends AppCompatActivity {
                 contact.setFirebaseid(firebaseAuth.getCurrentUser().getUid());
 
                 azureContactArrayList.add(contact);
-
-
 
 
             }
@@ -504,9 +502,9 @@ public class MainActivityDrawer extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            //Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            //Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 

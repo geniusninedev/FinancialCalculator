@@ -35,8 +35,6 @@ public class LoanFullReport extends AppCompatActivity {
         //customize toolbar
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       // getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Loan Full Report");
 
         //declartion of designing tool
@@ -94,9 +92,9 @@ public class LoanFullReport extends AppCompatActivity {
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            //Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            //Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 }

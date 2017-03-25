@@ -1,5 +1,9 @@
 package com.nineinfosys.financialcalculator.BusinessCalcualtor;
 
+
+/**
+ * Created by Divya on 28-02-2017.
+ */
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -51,13 +55,11 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
         //initalization of designing tools
         layoutresult=(LinearLayout)this.findViewById(R.id.layoutdisplayresult);
         layoutWarning=(LinearLayout)this.findViewById(R.id.layoutWarning);
-        // spinnerCompoundinglist=(Spinner)findViewById(R.id.spinnerinterestCompounding);
+
         editTextLoanAmount=(EditText)findViewById(R.id.editTextLoanAmount) ;
         editTextInterestRate=(EditText)findViewById(R.id.editTextLoanInterestRate) ;
         editTextyear=(EditText)findViewById(R.id.editTextLoantermyear) ;
-      //  editTextMonth=(EditText)findViewById(R.id.editTextLoantermmonth) ;
-     //   editTextCompoundsperyear=(EditText)findViewById(R.id.editTextCompounds) ;
-        editTextOriginationFee=(EditText)findViewById(R.id.editTextOriginationFee) ;
+
         editTextDocumentationFee=(EditText)findViewById(R.id.editTextDocumentationFee) ;
         editTextOtherFee=(EditText)findViewById(R.id.editTextOtherFee) ;
 
@@ -126,11 +128,7 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
            editTextyear.setError("Enter Compound Peroids in year");
            layoutWarning.setVisibility(View.GONE);
            layoutresult.setVisibility(View.GONE);
-        } /*else if (editTextMonth.getText().toString().trim().equals("") || editTextMonth.getText().toString().isEmpty()) {
-            editTextMonth.setError("Enter Loan term in Months");
-           layoutWarning.setVisibility(View.GONE);
-           layoutresult.setVisibility(View.GONE);
-        }*/
+        }
         else if (editTextOriginationFee.getText().toString().trim().equals("") || editTextOriginationFee.getText().toString().isEmpty()) {
             editTextOriginationFee.setError("Enter Origination fee per year");
            layoutWarning.setVisibility(View.GONE);
@@ -154,9 +152,8 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
             loanAmount = Double.parseDouble(editTextLoanAmount.getText().toString());
             interestRate = Double.parseDouble(editTextInterestRate.getText().toString());
             year = Integer.parseInt(editTextyear.getText().toString());
-           month = Integer.parseInt(spinnerMonth.getSelectedItem().toString().trim());
-           // month = Integer.parseInt(editTextMonth.getText().toString());
-            // compounds=Integer.parseInt(editTextCompoundsperyear.getText().toString());
+            month = Integer.parseInt(spinnerMonth.getSelectedItem().toString().trim());
+
             originationfee = Double.parseDouble(editTextOriginationFee.getText().toString());
             documentationfee = Double.parseDouble(editTextDocumentationFee.getText().toString());
             otherfee = Double.parseDouble(editTextOtherFee.getText().toString());
@@ -239,9 +236,9 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 }

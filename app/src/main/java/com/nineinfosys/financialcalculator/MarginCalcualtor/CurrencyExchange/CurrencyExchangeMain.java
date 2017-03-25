@@ -1,5 +1,10 @@
 package com.nineinfosys.financialcalculator.MarginCalcualtor.CurrencyExchange;
 
+
+
+/**
+ * Created by Divya on 4-02-2017.
+ */
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -156,9 +161,9 @@ public class CurrencyExchangeMain extends AppCompatActivity implements View.OnCl
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 

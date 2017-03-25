@@ -1,5 +1,8 @@
 package com.nineinfosys.financialcalculator.BusinessCalcualtor;
 
+/**
+ * Created by Divya on 28-02-2017.
+ */
 public class businessCalculator {
 	private double loanAmount;
     private double intrestRate;
@@ -84,15 +87,6 @@ public class businessCalculator {
 
 		return annualPayment;
 	}
-/*
-	public double CalculateCompoundInterest()
-	{
-		r=interestRate/100;
-		double m1=(months/12);
-		Amount=(loanAmount*(Math.pow((1+(r/noofterms)),(noofterms*m1))));
-		return Amount;
-
-	}*/
 
 	  //monthly payment
     public double calculateEMI(){

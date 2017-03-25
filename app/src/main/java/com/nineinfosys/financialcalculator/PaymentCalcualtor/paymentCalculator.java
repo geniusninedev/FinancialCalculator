@@ -1,5 +1,10 @@
 package com.nineinfosys.financialcalculator.PaymentCalcualtor;
 
+
+
+/**
+ * Created by Divya
+ */
 public class paymentCalculator {
 	private double loanAmount;
     private double intrestRate;

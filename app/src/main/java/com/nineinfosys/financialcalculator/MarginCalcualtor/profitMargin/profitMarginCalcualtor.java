@@ -1,7 +1,11 @@
 package com.nineinfosys.financialcalculator.MarginCalcualtor.profitMargin;
 
 public class profitMarginCalcualtor {
-	
+
+
+	/**
+	 * Created by Divya on 6-02-2017.
+	 */
 	private double cost,cost2,cost1;
 	private double salesRevenue,salerevenuevalue;
 	private double grossMargin;

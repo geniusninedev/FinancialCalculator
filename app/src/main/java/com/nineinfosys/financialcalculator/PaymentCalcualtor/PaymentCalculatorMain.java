@@ -20,6 +20,11 @@ import com.nineinfosys.financialcalculator.Report.LoanReport;
 
 import java.text.DecimalFormat;
 
+
+
+/**
+ * Created by Divya
+ */
 public class PaymentCalculatorMain extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextLoanAmount,editTextLoanTerm,editTextInterestRate;
@@ -174,9 +179,9 @@ public class PaymentCalculatorMain extends AppCompatActivity implements View.OnC
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 

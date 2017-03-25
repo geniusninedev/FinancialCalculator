@@ -75,7 +75,7 @@ public class DashBord extends Fragment {
                 try{
 
                     try {
-                        URL url = new URL("http://www.financialexpress.com/economy/feed/");
+                        URL url = new URL("http://syndication.indianexpress.com/rss/794/economy.xml");
                         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                         factory.setNamespaceAware(false);
                         final XmlPullParser xpp = factory.newPullParser();

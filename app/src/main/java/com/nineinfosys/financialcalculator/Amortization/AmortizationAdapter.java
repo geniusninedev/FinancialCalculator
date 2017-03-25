@@ -1,5 +1,8 @@
 package com.nineinfosys.financialcalculator.Amortization;
 
+/**
+ * Created by Divya on 28-02-2017.
+ */
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -18,7 +21,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 /**
- * Created by Dev on 18-01-2017.
+ * Created by Divya on 18-01-2017.
  */
 
 public class AmortizationAdapter extends RecyclerView.Adapter<AmortizationAdapter.ListViewHolder> {
@@ -27,11 +30,7 @@ public class AmortizationAdapter extends RecyclerView.Adapter<AmortizationAdapte
     LayoutInflater inflater;
     private List<AmortizationCalculation.AmortizationResults> results;
     AmortizationCalculation.AmortizationResults result;
-   /* ArrayList<Integer> amortizationID;
-    ArrayList<Double> amortizationAmount;
-    ArrayList<Double> amortizationInterest;
-    ArrayList<Double> amortizationPrincipal;
-    ArrayList<Double> amortizationRemainingBalance;*/
+
 
 
     public AmortizationAdapter(Context context2, List<AmortizationCalculation.AmortizationResults> results) {

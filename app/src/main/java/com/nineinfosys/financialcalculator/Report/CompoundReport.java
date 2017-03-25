@@ -57,8 +57,7 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
         //customize toolbar
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-      //  getSupportActionBar().setHomeButtonEnabled(true);
+
         getSupportActionBar().setTitle("Loan Report");
 
         PrincipalAmount = getIntent().getExtras().getDouble("PrincipalAmount");
@@ -71,8 +70,7 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
 
 
         mParties = new double[]{PrincipalAmount, InterestAmount};
-      //  Toast.makeText(CompoundReport.this, " ToatalInterest" + InterestAmount, Toast.LENGTH_SHORT).show();
-        //  mParties=strPrincipal;
+
 
         mChart = (PieChart) findViewById(R.id.chart1);
         mChart.setUsePercentValues(true);
@@ -100,8 +98,6 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
         mChart.setRotationEnabled(true);
         mChart.setHighlightPerTapEnabled(true);
 
-        // mChart.setUnit(" €");
-        // mChart.setDrawUnitsInChart(true);
 
         // add a selection listener
         mChart.setOnChartValueSelectedListener(this);
@@ -161,7 +157,6 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
                 i1.putExtra("InterestAmount",InterestAmount);
                 i1.putExtra("compoundAmount",compoundAmount);
                 i1.putExtra("APY",APY);
-               // i1.putExtra("compoundAmount",compoundAmount);
                 i1.putExtra("bmp_Image", byteArray);
                 startActivity(i1);
 
@@ -200,7 +195,7 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
                 break;
             }
             case R.id.actionSave: {
-                // mChart.saveToGallery("title"+System.currentTimeMillis());
+
                 mChart.saveToPath("title" + System.currentTimeMillis(), "");
                 break;
             }
@@ -235,7 +230,7 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
         float mult = range;
 
         List<PieEntry> entries = new ArrayList<>();
-      //  Toast.makeText(this, "" + (float) ToatalInterest, Toast.LENGTH_LONG).show();
+
 
 
         entries.add(new PieEntry((float) InterestAmount, "Interest-" + (new DecimalFormat("##.##").format(InterestAmount))));

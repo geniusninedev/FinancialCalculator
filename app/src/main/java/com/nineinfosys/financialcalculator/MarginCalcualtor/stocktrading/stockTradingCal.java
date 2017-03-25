@@ -1,6 +1,11 @@
 package com.nineinfosys.financialcalculator.MarginCalcualtor.stocktrading;
 
 public class stockTradingCal {
+
+
+	/**
+	 * Created by Divya on 26-02-2017.
+	 */
 	
 	private double stockPrice;
 	private double numberofShares;

@@ -17,6 +17,11 @@ import com.nineinfosys.financialcalculator.R;
 
 import java.text.DecimalFormat;
 
+
+/**
+ * Created by Divya on 26-02-2017.
+ */
+
 public class StockTradingCalculator extends AppCompatActivity implements View.OnClickListener {
     EditText editTextStockPrice,editTextNoofShares,editTextMarginRate;
     TextView textViewResultAmontRequired;
@@ -117,9 +122,9 @@ public class StockTradingCalculator extends AppCompatActivity implements View.On
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 

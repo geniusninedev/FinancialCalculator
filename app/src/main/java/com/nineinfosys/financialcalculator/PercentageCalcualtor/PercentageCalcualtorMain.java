@@ -15,6 +15,11 @@ import android.widget.TextView;
 import com.nineinfosys.financialcalculator.R;
 
 
+
+/**
+ * Created by Divya
+ */
+
 public class PercentageCalcualtorMain extends AppCompatActivity implements TextWatcher,View.OnClickListener{
     EditText edittextpercentageX1, edittextpercentageY1, edittextpercentageX2, edittextpercentageY2, edittextpercentageX3, edittextpercentageY3;
     TextView textViewvalueX1, textViewvalueY1, textViewAns1, textViewvalueX2, textViewvalueY2, textViewAns2, textViewvalueX3, textViewvalueY3, textViewAns3;
@@ -110,6 +115,7 @@ public class PercentageCalcualtorMain extends AppCompatActivity implements TextW
         try {
             percentageX2 = Double.parseDouble(edittextpercentageX2.getText().toString());
             percentageY2 = Double.parseDouble(edittextpercentageY2.getText().toString());
+
             //call percentagecalculator class for calculation
             percentageCalculator=new PercentageCalculator(percentageX2,percentageY2);
             resultTwo= percentageCalculator.percentCalculateTwo();
@@ -129,6 +135,7 @@ public class PercentageCalcualtorMain extends AppCompatActivity implements TextW
         try {
             percentageX3 = Double.parseDouble(edittextpercentageX3.getText().toString());
             percentageY3 = Double.parseDouble(edittextpercentageY3.getText().toString());
+
             //call percentagecalculator class for calculation
             percentageCalculator=new PercentageCalculator(percentageX3,percentageY3);
             resultTwo= percentageCalculator.percentCalculateThree();
@@ -183,9 +190,9 @@ public class PercentageCalcualtorMain extends AppCompatActivity implements TextW
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 }

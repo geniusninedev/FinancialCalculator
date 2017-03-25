@@ -1,7 +1,10 @@
 package com.nineinfosys.financialcalculator.CompoundInterestCalcualtor;
 
 public class CompoundCalculation {
-	
+
+	/**
+	 * Created by Divya on 28-02-2017.
+	 */
 	
 	
 	double principalAmount;

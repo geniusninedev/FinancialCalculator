@@ -3,7 +3,7 @@ package com.nineinfosys.financialcalculator.Amortization;
 import java.util.ArrayList;
 
 /**
- * Created by Dev on 28-02-2017.
+ * Created by Divya on 28-02-2017.
  */
 
 public class AmortizationCalculation {

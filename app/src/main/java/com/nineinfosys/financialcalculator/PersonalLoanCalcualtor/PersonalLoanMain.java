@@ -65,8 +65,6 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
         spinnerPaidType=(Spinner)findViewById(R.id.spinnerPaidtype);
         spinnerIsA=(Spinner)findViewById(R.id.spinnerAmounttype);
         spinnerMonth=(Spinner)findViewById(R.id.spinnerMonths);
-       // radioGroupPaid=(RadioGroup)findViewById(R.id.radioGroupPaid);
-       // radioButtonIsA=(RadioButton)findViewById(radioGroupIsatype.getCheckedRadioButtonId());
 
         editTextLoanAmount=(EditText)findViewById(R.id.editTextLoanAmount);
         editTextInsurance=(EditText)findViewById(R.id.editTextInsurance);
@@ -376,9 +374,9 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 
