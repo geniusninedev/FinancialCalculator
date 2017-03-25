@@ -248,6 +248,7 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
 
             case R.id.buttonLoanReset:
                 layoutDisplayResult.setVisibility(View.GONE);
+                layoutwarning.setVisibility(View.GONE);
                 edittextLaonAmount.setText(null);
                 edittextInterestRate.setText(null);
                 edittextLoanMonths.setText(null);

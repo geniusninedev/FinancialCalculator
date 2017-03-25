@@ -61,6 +61,7 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
         editTextyear=(EditText)findViewById(R.id.editTextLoantermyear) ;
 
         editTextDocumentationFee=(EditText)findViewById(R.id.editTextDocumentationFee) ;
+        editTextOriginationFee=(EditText)findViewById(R.id.editTextOriginationFee) ;
         editTextOtherFee=(EditText)findViewById(R.id.editTextOtherFee) ;
 
         textViewMonthlyPayment=(TextView) findViewById(R.id.textViewMonthlyAmount) ;
@@ -110,12 +111,14 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
 
     }
     private void calculate() {
-       if(editTextLoanAmount.getText().toString().trim().equals("") && editTextInterestRate.getText().toString().trim().equals("")&& editTextyear.getText().toString().trim().equals("0")
-            && editTextOriginationFee.getText().toString().trim().equals("")&& editTextDocumentationFee.getText().toString().trim().equals("")&& editTextOtherFee.getText().toString().trim().equals(""))
-       {
-           layoutWarning.setVisibility(View.VISIBLE);
-           layoutresult.setVisibility(View.GONE);
-       }
+
+        if(editTextLoanAmount.getText().toString().trim().equals("") && editTextInterestRate.getText().toString().trim().equals("") && editTextyear.getText().toString().trim().equals("0") && editTextOriginationFee.getText().toString().trim().equals("")
+                && editTextDocumentationFee.getText().toString().trim().equals("")&& editTextOtherFee.getText().toString().trim().equals(""))
+        {
+            layoutWarning.setVisibility(View.VISIBLE);
+            layoutresult.setVisibility(View.GONE);
+        }
+
         else if (editTextLoanAmount.getText().toString().trim().equals("") || editTextLoanAmount.getText().toString().isEmpty()) {
             editTextLoanAmount.setError("Loan Amount is Required");
            layoutWarning.setVisibility(View.GONE);
@@ -149,6 +152,7 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
 
             layoutresult.setVisibility(View.VISIBLE);
+
             loanAmount = Double.parseDouble(editTextLoanAmount.getText().toString());
             interestRate = Double.parseDouble(editTextInterestRate.getText().toString());
             year = Integer.parseInt(editTextyear.getText().toString());
@@ -213,8 +217,7 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
                 editTextLoanAmount.setText(null);
                 editTextInterestRate.setText(null);
                 editTextyear.setText("0");
-              //  editTextMonth.setText("0");
-                editTextOriginationFee.setText(null);
+                 editTextOriginationFee.setText(null);
                 editTextDocumentationFee.setText(null);
                 editTextOtherFee.setText(null);
                 break;

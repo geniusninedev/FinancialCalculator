@@ -261,6 +261,7 @@ public class LoanComparisonCalculatorMain extends AppCompatActivity implements V
 
             case R.id.buttonLoanReset:
                 layoutDisplayResult.setVisibility(View.GONE);
+                layoutwarning.setVisibility(View.GONE);
                 edittextLaonAmount.setText(null);
                 edittextInterestRate.setText(null);
                 edittextLoanMonths.setText(null);

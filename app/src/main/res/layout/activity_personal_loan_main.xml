@@ -29,6 +29,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textViewwarning"
+                    android:textSize="17dp"
                     android:textColor="@android:color/holo_red_light"
                     android:textStyle="bold"/>
             </LinearLayout>
