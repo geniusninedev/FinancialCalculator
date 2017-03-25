@@ -130,7 +130,7 @@
                     android:id="@+id/editTextInsurance"
                     android:layout_weight="1" />
                 <TextView
-                    android:text=" Months"
+                    android:text=" /Months"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textViewInterestmnth1"
@@ -797,16 +797,17 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp">
                 <Button
-                    android:id="@+id/buttonPersonalLoanEmail"
+                    android:id="@+id/buttonPersonalLoanEmailSend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@color/btn_color"
                     android:textStyle="bold"
-                    android:text="Email"
+                    android:text="EMAIL"
                     android:background="@android:drawable/editbox_background_normal"
                     android:textColor="@color/cardview_light_background"
                     android:textSize="14dp" />
+
                 <Button
                     android:id="@+id/buttonReport"
                     android:layout_width="match_parent"

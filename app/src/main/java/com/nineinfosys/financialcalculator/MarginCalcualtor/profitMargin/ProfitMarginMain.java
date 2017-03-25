@@ -121,7 +121,7 @@ public class ProfitMarginMain extends AppCompatActivity implements View.OnClickL
 
                 textViewResultofcostrevenuegross.setText(new DecimalFormat("##.##").format(grossMarginresult));
                 textViewResultGrossProfit.setText(new DecimalFormat("##.##").format(grossProfitresult));
-                textViewResultMarkup.setText(new DecimalFormat("##.##").format(grossMarkupresult)+"%");
+                textViewResultMarkup.setText(new DecimalFormat("##.##").format(grossMarkupresult));
 
             }
 
@@ -144,7 +144,7 @@ public class ProfitMarginMain extends AppCompatActivity implements View.OnClickL
 
                 textViewResultofcostrevenuegross.setText(new DecimalFormat("##.##").format(calculateSalesRevenue));
                 textViewResultGrossProfit.setText(new DecimalFormat("##.##").format(calculateSalesRevenueGrossProfit));
-                textViewResultMarkup.setText(new DecimalFormat("##.##").format(calculateSalesRevenueMarkup)+"%");
+                textViewResultMarkup.setText(new DecimalFormat("##.##").format(calculateSalesRevenueMarkup));
             }
 
             else if (editTextCost.getText().toString().trim().equals("")) {
@@ -167,7 +167,7 @@ public class ProfitMarginMain extends AppCompatActivity implements View.OnClickL
                 //setting values to editext
                 textViewResultofcostrevenuegross.setText(new DecimalFormat("##.##").format(calculateCost));
                 textViewResultGrossProfit.setText(new DecimalFormat("##.##").format(CostGainPercent));
-                textViewResultMarkup.setText(new DecimalFormat("##.##").format(calculateCostMarkup)+"%");
+                textViewResultMarkup.setText(new DecimalFormat("##.##").format(calculateCostMarkup));
 
             }
         }

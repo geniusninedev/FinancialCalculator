@@ -11,7 +11,14 @@
         <item
             android:id="@+id/LoanCalcualtor"
             android:icon="@drawable/ic_loan"
-            android:title="Loan Calculator" />
+            android:title=" Simple Loan Calculator" />
+    </group>
+    <group android:id="@+id/grp8" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/CompoundInterestCalculator"
+            android:icon="@drawable/ic_compound"
+            android:title="Compound Interest Calculator" />
     </group>
 
     <group android:id="@+id/grp3" android:checkableBehavior="single" >
@@ -22,6 +29,16 @@
             android:title="Payment Calculator" />
 
     </group>
+
+    <group android:id="@+id/grp9" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/LoanComparisonCalcualtor"
+            android:icon="@drawable/ic_comparison1"
+            android:title="Loan Comparison Calculator" />
+
+    </group>
+
 
 
     <group android:id="@+id/grp4" android:checkableBehavior="single" >
@@ -40,13 +57,7 @@
             android:title="Business Loan Calculator " />
 
     </group>
-    <group android:id="@+id/grp6" android:checkableBehavior="single" >
 
-        <item
-            android:id="@+id/Calcualtor"
-            android:icon="@drawable/ic_calcualtor"
-            android:title="Calculator" />
-    </group>
     <group android:id="@+id/grp7" android:checkableBehavior="single" >
 
         <item
@@ -54,13 +65,7 @@
             android:icon="@drawable/ic_percentage"
             android:title="Percentage Calcualtor" />
     </group>
-    <group android:id="@+id/grp8" android:checkableBehavior="single" >
 
-        <item
-            android:id="@+id/CompoundInterestCalculator"
-            android:icon="@drawable/ic_compound"
-            android:title="Compound Interest Calculator" />
-    </group>
 
   <item
            android:id="@+id/MarginCalculator"

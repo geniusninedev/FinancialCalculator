@@ -45,7 +45,7 @@
                    />
 
                 <TextView
-                    android:text="This loan calculator will help you detemine the monthly payments on a loan. This calculator can be used for mortage,auto,or any other fixed loan types. "
+                    android:text="This loan calculator will help you to detemine the monthly, annual and total payments, interest on a loan. "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
@@ -116,6 +116,7 @@
                         android:textSize="16dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="10dp"
+                        android:textColor="@color/main_text_color"
                         android:id="@+id/textViewinterestratepercentfullreport"
                         android:layout_weight="1"/>
                 </LinearLayout>

@@ -114,6 +114,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
+
+        <activity
+            android:name=".LoanComaprisonCalcualtor.LoanComparisonCalculatorMain"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivityDrawer" />
+        </activity>
+
         <activity
             android:name=".Report.BusinessLoanFullReport"
             android:configChanges="orientation|screenSize|keyboardHidden">
@@ -184,11 +193,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
-        <activity android:name=".Calcualtor.Calculator">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivityDrawer" />
-        </activity>
+
         <activity
             android:name=".Login.LoginActivity"
             android:configChanges="orientation|screenSize|keyboardHidden" />

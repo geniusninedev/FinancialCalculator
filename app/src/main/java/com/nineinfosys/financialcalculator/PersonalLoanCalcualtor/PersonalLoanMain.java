@@ -94,7 +94,7 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
         buttonReset=(Button)findViewById(R.id.buttonReset);
         buttonAmotization=(Button)findViewById(R.id.buttonAmortization);
         buttonReport=(Button)findViewById(R.id.buttonReport);
-        buttonEmail=(Button)findViewById(R.id.buttonPersonalLoanEmail);
+        buttonEmail=(Button)findViewById(R.id.buttonPersonalLoanEmailSend);
 
 
         //adding value to spinner
@@ -169,26 +169,6 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
         spinnerIsA.setAdapter(Adapter2);
 
 
-     /*   spinnerIsA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                strIsAtype = spinnerIsA.getSelectedItem().toString().trim();
-
-                switch(strIsAtype)
-                {
-                    case "Percentage":
-                        textViewOriginationAmountpercent.setVisibility(View.VISIBLE);
-                        textViewOriginationAmount.setVisibility(View.GONE);
-                        break;
-                    case "Amount":
-                        textViewOriginationAmount.setVisibility(View.VISIBLE);
-                        textViewOriginationAmountpercent.setVisibility(View.GONE);
-                        break;
-                }
-            }
-        });*/
-
-
         buttonCalculate.setOnClickListener(this);
         buttonReset.setOnClickListener(this);
         buttonAmotization.setOnClickListener(this);
@@ -225,11 +205,7 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
 
     }
     private void calculatePersonalLoan() {
-       // radioGroupIsatype=(RadioGroup)findViewById(R.id.radioGroupIs);
-      /*  Toast.makeText(this,"radioGroupPaid"+radiButton.getText().toString().trim(),Toast.LENGTH_LONG).show();
-        Toast.makeText(this,"radioGroupPaid"+radioButtonIsA.getText().toString().trim(),Toast.LENGTH_LONG).show();*/
-       /* strPaid =radiButton.getText().toString().trim();
-        strIsAtype=radioButtonIsA.getText().toString().trim();*/
+
         if(editTextLoanAmount.getText().toString().trim().equals("") && editTextInterestRate.getText().toString().trim().equals("") && editTextInsurance.getText().toString().trim().equals("0") && editTextyear.getText().toString().trim().equals("0")
                 && editTextStartYear.getText().toString().trim().equals("")&& editTextOriginationFee.getText().toString().trim().equals("0"))
         {
@@ -248,11 +224,7 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
             editTextyear.setError("Enter Compound Peroids in year");
             layoutresult.setVisibility(View.GONE);
             layoutWarning.setVisibility(View.GONE);
-        } /*else if (editTextMonth.getText().toString().trim().equals("") || editTextMonth.getText().toString().isEmpty()) {
-            editTextMonth.setError("Enter Loan term in Months");
-            layoutresult.setVisibility(View.GONE);
-            layoutWarning.setVisibility(View.GONE);
-        }*/
+        }
         else if (editTextInsurance.getText().toString().trim().equals("") || editTextInsurance.getText().toString().isEmpty()) {
             editTextInsurance.setError("Provide Insurance value per month");
             layoutresult.setVisibility(View.GONE);
@@ -380,14 +352,15 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
                 startActivity(i2);
                 break;
 
-            case R.id.buttonPersonalLoanEmail:
-                String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(totalcalmonth)+"\n Insurance:"+new DecimalFormat("##.##").format(insurance)+"\n Start Month:"+new DecimalFormat("##.##").format(startmonth)+"\n Start Year:"+new DecimalFormat("##.##").format(startyear)+
-                        "\n Origination Amount:"+new DecimalFormat("##.##").format(originationamount)+ "\n Monthly Payment:"+new DecimalFormat("##.##").format(monthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(totalInterest)+"\n Total Insurance Amount:"+new DecimalFormat("##.##").format(totalInsurance)+"\n Total Origination Amount:"+new DecimalFormat("##.##").format(totalFee)+
-                        "\n Total Interest+Insurance :"+new DecimalFormat("##.##").format(totalAll)+"\n Total Payment:"+new DecimalFormat("##.##").format(TotalPayment)+"Annual Payment:"+new DecimalFormat("##.##").format(AnnualPayment)+ "\n Actually Received Amount:"+new DecimalFormat("##.##").format(actuallyReceived)+"\n Pay off Month :"+payoffmonth +"\n Pay off Year :"+payoffyear;
+            case R.id.buttonPersonalLoanEmailSend:
+
+
+                String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(totalcalmonth)+"\n Insurance:"+new DecimalFormat("##.##").format(insurance)+"\n Start Month:"+startmonth+"\n Start Year:"+new DecimalFormat("##.##").format(startyear)+ "\n Origination Amount:"+new DecimalFormat("##.##").format(originationamount)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(monthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(totalInterest)+"\n Total Insurance Amount:"+new DecimalFormat("##.##").format(totalInsurance)+"\n Total Origination Amount:"+new DecimalFormat("##.##").format(totalFee)+
+                        "\n Total Interest+Insurance :"+new DecimalFormat("##.##").format(totalAll)+"\n Total Payment:"+new DecimalFormat("##.##").format(TotalPayment)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(AnnualPayment)+ "\n Actually Received Amount:"+new DecimalFormat("##.##").format(actuallyReceived)+"\n Pay off Month :"+(payoffmonth) +"\n Pay off Year :"+(payoffyear);
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                 email.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");
-                email.putExtra(Intent.EXTRA_TEXT,message );
+                email.putExtra(Intent.EXTRA_TEXT,message);
                 email.setType("message/rfc822");
                 startActivity(Intent.createChooser(email, "Select Email Client"));
                 break;

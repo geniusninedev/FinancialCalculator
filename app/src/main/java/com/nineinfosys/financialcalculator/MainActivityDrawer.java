@@ -40,10 +40,11 @@ import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.http.OkHttpClientFactory;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
 import com.nineinfosys.financialcalculator.BusinessCalcualtor.BusinessCalcualtorMain;
-import com.nineinfosys.financialcalculator.Calcualtor.Calculator;
+
 import com.nineinfosys.financialcalculator.CompoundInterestCalcualtor.CompoundCalculatorMain;
 import com.nineinfosys.financialcalculator.DashBord.DashBord;
 import com.nineinfosys.financialcalculator.LoanCalcualtor.LoanCalculatorMain;
+import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
 import com.nineinfosys.financialcalculator.Login.Contacts;
 import com.nineinfosys.financialcalculator.Login.LoginActivity;
 import com.nineinfosys.financialcalculator.MarginCalcualtor.CurrencyExchange.CurrencyExchangeMain;
@@ -132,65 +133,56 @@ public class MainActivityDrawer extends AppCompatActivity {
 
                 }
                 if (menuItem.getItemId() == LoanCalcualtor) {
-                   /* FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new LoanCalcualtorFragment()).commit();*/
+
                     Intent intent = new Intent(MainActivityDrawer.this, LoanCalculatorMain.class);
                     startActivity(intent);
                 }
                 if (menuItem.getItemId() == R.id.PaymentCalcualtor) {
-                  /*  FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new BMRFragment()).commit();*/
 
                     Intent intent = new Intent(MainActivityDrawer.this, PaymentCalculatorMain.class);
                     startActivity(intent);
                 }
+                if (menuItem.getItemId() == R.id.LoanComparisonCalcualtor) {
+
+
+                    Intent intent = new Intent(MainActivityDrawer.this, LoanComparisonCalculatorMain.class);
+                    startActivity(intent);
+                }
 
                 if (menuItem.getItemId() == R.id.PersonalLoanCalcualtor) {
-                    /*FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new IdealWeightFragment()).commit();*/
+
                     Intent intent=new Intent(MainActivityDrawer.this,PersonalLoanMain.class);
                     startActivity(intent);
                 }
                 if (menuItem.getItemId() == R.id.BusinessLoanCalcualtor) {
-                    /*FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new IdealWeightFragment()).commit();*/
+
                     Intent intent = new Intent(MainActivityDrawer.this, BusinessCalcualtorMain.class);
                     startActivity(intent);
                 }
-                if (menuItem.getItemId() == R.id.Calcualtor) {
-                    /*FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new IdealWeightFragment()).commit();*/
-                    Intent intent = new Intent(MainActivityDrawer.this,Calculator.class );
-                    startActivity(intent);
-                }
+
 
                 if (menuItem.getItemId() == R.id.PercentageCalcualtor) {
-                    /*FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new IdealWeightFragment()).commit();*/
+
                     Intent intent = new Intent(MainActivityDrawer.this, PercentageCalcualtorMain.class);
                     startActivity(intent);
                 }
                 if (menuItem.getItemId() == R.id.CompoundInterestCalculator) {
-                    /*FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new IdealWeightFragment()).commit();*/
+
                     Intent intent = new Intent(MainActivityDrawer.this, CompoundCalculatorMain.class);
                     startActivity(intent);
                 }
                 if (menuItem.getItemId() == R.id.ProfitMarginCalculator) {
-                    /*FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new IdealWeightFragment()).commit();*/
+
                         Intent intent=new Intent(MainActivityDrawer.this,ProfitMarginMain.class);
                         startActivity(intent);
                 }
                 if (menuItem.getItemId() == R.id.StockTradingMarginCalculator) {
-                   /*FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new IdealWeightFragment()).commit();*/
+
                         Intent intent = new Intent(MainActivityDrawer.this, StockTradingCalculator.class);
                         startActivity(intent);
                     }
                if (menuItem.getItemId() == R.id.CurrencyExchangeMarginCalculator) {
-                   /* FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new FATFragment()).commit();*/
+
                     Intent intent=new Intent(MainActivityDrawer.this, CurrencyExchangeMain.class);
                     startActivity(intent);
                 }
