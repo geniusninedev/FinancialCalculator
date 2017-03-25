@@ -259,6 +259,7 @@
                 android:inputType="number"
                 android:ems="10"
                 android:hint="Year"
+                android:maxLength="5"
                 android:digits="0123456789."
                 android:background="@android:drawable/editbox_background"
                 android:id="@+id/editTextstartyear" />
@@ -391,6 +392,7 @@
                     android:background="@android:drawable/editbox_background"
                     android:digits="0123456789."
                     android:ems="10"
+                    android:maxLength="5"
                     android:inputType="number"
                     android:text="0" />
 
