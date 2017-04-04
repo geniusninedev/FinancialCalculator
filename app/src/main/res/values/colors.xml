@@ -11,4 +11,6 @@
     <color name="main_text_color">#00000f</color>
     <color name="holo_red_dark">#ffcc0000</color>
     <color name="colorwhite">#f4f2f2</color>
+    <color name="cardview_dark_background">#FF424242</color>
+    <color name="cardview_light_background">#FFFFFFFF</color>
 </resources>
