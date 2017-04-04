@@ -219,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:maxLength="4"
+                    android:maxLength="5"
                     android:digits="0123456789."
                     android:background="@android:drawable/editbox_background"
                     android:id="@+id/editTextOriginationFee"
