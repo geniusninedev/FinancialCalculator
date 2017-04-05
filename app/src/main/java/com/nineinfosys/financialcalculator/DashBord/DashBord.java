@@ -38,10 +38,10 @@ public class DashBord extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.dashbord, null);
 
-     /*   MobileAds.initialize(getActivity(), getString(R.string.ads_app_id));
+        MobileAds.initialize(getActivity(), getString(R.string.ads_app_id));
         AdView mAdView = (AdView) v.findViewById(R.id.adViewMainPageNews);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);*/
+        mAdView.loadAd(adRequest);
 
         ((MainActivityDrawer) getActivity()).toolbar.setTitle("Feeds");
 

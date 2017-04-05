@@ -13,8 +13,8 @@
     <string name="facebook_app_id">267933240296176</string>
     <string name="fb_login_protocol_scheme">fb267933240296176</string>
     <string name="action_logout">Logout</string>
-    <string name="banner_ad_unit_id">ca-app-pub-6819279779322408/2629200570</string>
-    <string name="ads_app_id">ca-app-pub-6819279779322408~8675734175</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6819279779322408/7575287375</string>
+    <string name="ads_app_id">ca-app-pub-6819279779322408~6098554175</string>
 
     <string name="menu_settings">Settings</string>
 
@@ -47,5 +47,10 @@
     <string name="buttonCosine">cos</string>
     <string name="buttonTangent">tan</string>
 
+    <string name="loading">Loading</string>
+    <string name="googleloginText">Sign In</string>
+    <string name="facebook_data">FacebookUser</string>
+    <string name="email_data">EmailUser</string>
+    <string name="google_data">GoogleUser</string>
 
 </resources>

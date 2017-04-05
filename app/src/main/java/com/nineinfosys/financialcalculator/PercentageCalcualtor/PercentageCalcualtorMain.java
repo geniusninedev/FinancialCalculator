@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.nineinfosys.financialcalculator.MarginCalcualtor.CurrencyExchange.CurrencyExchangeMain;
 import com.nineinfosys.financialcalculator.R;
 
 
@@ -42,6 +46,12 @@ public class PercentageCalcualtorMain extends AppCompatActivity implements TextW
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Percentage Calcualtor");
+
+        //Adview added in Activity
+        MobileAds.initialize(PercentageCalcualtorMain.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView)this.findViewById(R.id.adViewPercentageCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //Linearlayout declaration
         linearLayoutOne = (LinearLayout) findViewById(R.id.percentageOnelayout);

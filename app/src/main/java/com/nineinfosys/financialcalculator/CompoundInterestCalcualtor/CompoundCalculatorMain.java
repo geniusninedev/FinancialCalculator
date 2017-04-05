@@ -14,7 +14,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.nineinfosys.financialcalculator.Amortization.AmortizationCompoundTable;
+import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
 import com.nineinfosys.financialcalculator.R;
 import com.nineinfosys.financialcalculator.Report.CompoundReport;
 
@@ -47,6 +51,12 @@ public class CompoundCalculatorMain extends AppCompatActivity implements View.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Compound Calcualtor");
+
+        //Adview added in Activity
+        MobileAds.initialize(CompoundCalculatorMain.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView)this.findViewById(R.id.adViewCompoundCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //declaration of dsesigning tools
         layoutcompoundresult=(LinearLayout)this.findViewById(R.id.layoutcompoundresult);

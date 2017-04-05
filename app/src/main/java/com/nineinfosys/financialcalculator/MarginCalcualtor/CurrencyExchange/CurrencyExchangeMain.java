@@ -20,6 +20,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
 import com.nineinfosys.financialcalculator.R;
 
 import java.text.DecimalFormat;
@@ -49,6 +53,12 @@ public class CurrencyExchangeMain extends AppCompatActivity implements View.OnCl
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Currency Exchange Calcualtor");
+
+        //Adview added in Activity
+        MobileAds.initialize(CurrencyExchangeMain.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView)this.findViewById(R.id.adViewCurrencyChange);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         layoutDisplayResult=(LinearLayout)findViewById(R.id.layoutDisplayResult);
         layoutWarning=(LinearLayout)findViewById(R.id.layoutWarning);

@@ -19,6 +19,9 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.nineinfosys.financialcalculator.Amortization.LoanAmortization;
 import com.nineinfosys.financialcalculator.R;
 import com.nineinfosys.financialcalculator.Report.LoanReport;
@@ -58,6 +61,11 @@ public class LoanCalculatorMain extends AppCompatActivity implements View.OnClic
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Simple Loan Calcualtor");
+
+        MobileAds.initialize(LoanCalculatorMain.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView)this.findViewById(R.id.adViewLoanCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //initalization of designing tool
         advancedlayout = (LinearLayout) this.findViewById(R.id.advancedlayout);

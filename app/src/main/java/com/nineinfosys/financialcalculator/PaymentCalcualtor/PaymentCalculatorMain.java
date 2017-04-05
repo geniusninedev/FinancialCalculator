@@ -14,7 +14,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.nineinfosys.financialcalculator.Amortization.LoanAmortization;
+import com.nineinfosys.financialcalculator.LoanCalcualtor.LoanCalculatorMain;
 import com.nineinfosys.financialcalculator.R;
 import com.nineinfosys.financialcalculator.Report.LoanReport;
 
@@ -47,6 +51,12 @@ public class PaymentCalculatorMain extends AppCompatActivity implements View.OnC
 
         //keyboard hidden first time
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        //Adview added in Activity
+        MobileAds.initialize(PaymentCalculatorMain.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView)this.findViewById(R.id.adViewPaymentCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //initalization of designing tool
         layoutdisplayresult=(LinearLayout)findViewById(R.id.layoutdisplayresult) ;

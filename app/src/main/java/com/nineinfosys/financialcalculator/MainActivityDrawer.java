@@ -12,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
@@ -26,11 +25,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,8 +42,8 @@ import com.nineinfosys.financialcalculator.CompoundInterestCalcualtor.CompoundCa
 import com.nineinfosys.financialcalculator.DashBord.DashBord;
 import com.nineinfosys.financialcalculator.LoanCalcualtor.LoanCalculatorMain;
 import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
-import com.nineinfosys.financialcalculator.Login.Contacts;
-import com.nineinfosys.financialcalculator.Login.LoginActivity;
+import com.nineinfosys.financialcalculator.Contacts.Contacts;
+import com.nineinfosys.financialcalculator.LoginActivity.Login;
 import com.nineinfosys.financialcalculator.MarginCalcualtor.CurrencyExchange.CurrencyExchangeMain;
 import com.nineinfosys.financialcalculator.MarginCalcualtor.profitMargin.ProfitMarginMain;
 import com.nineinfosys.financialcalculator.MarginCalcualtor.stocktrading.StockTradingCalculator;
@@ -357,7 +354,7 @@ public class MainActivityDrawer extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()==null){
                     Log.e("ForumMainActivity:", "User was null so directed to Login activity");
-                    Intent loginIntent = new Intent(MainActivityDrawer.this, LoginActivity.class);
+                    Intent loginIntent = new Intent(MainActivityDrawer.this, Login.class);
                     loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(loginIntent);
                     finish();

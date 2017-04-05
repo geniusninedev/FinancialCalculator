@@ -23,7 +23,11 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.nineinfosys.financialcalculator.LoanCalcualtor.loancalculation;
+import com.nineinfosys.financialcalculator.PaymentCalcualtor.PaymentCalculatorMain;
 import com.nineinfosys.financialcalculator.R;
 
 import java.text.DecimalFormat;
@@ -59,6 +63,12 @@ public class LoanComparisonCalculatorMain extends AppCompatActivity implements V
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Loan Comparison Calcualtor");
+
+        //Adview added in Activity
+        MobileAds.initialize(LoanComparisonCalculatorMain.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView)this.findViewById(R.id.adViewLoanComparisionCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //initalization of designing tool
         layoutDisplayResult = (LinearLayout) this.findViewById(R.id.layoutDisplayResult);

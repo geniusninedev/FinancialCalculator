@@ -19,7 +19,11 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.nineinfosys.financialcalculator.Amortization.LoanAmortization;
+import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
 import com.nineinfosys.financialcalculator.R;
 import com.nineinfosys.financialcalculator.Report.BusinessLoanReport;
 
@@ -51,6 +55,12 @@ public class BusinessCalcualtorMain extends AppCompatActivity implements View.On
 
         //keyboard hidden first time
        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        //Adview added in Activity
+        MobileAds.initialize(BusinessCalcualtorMain.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView)this.findViewById(R.id.adViewBusinessCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //initalization of designing tools
         layoutresult=(LinearLayout)this.findViewById(R.id.layoutdisplayresult);
