@@ -34,8 +34,7 @@ public class BusinessLoanFullReport extends AppCompatActivity {
         //customize toolbar
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-      //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       // getSupportActionBar().setHomeButtonEnabled(true);
+
         getSupportActionBar().setTitle("Loan Full Report");
 
         //declartion of designing tool

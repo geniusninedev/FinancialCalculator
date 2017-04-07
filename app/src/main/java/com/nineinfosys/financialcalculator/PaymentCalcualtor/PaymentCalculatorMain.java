@@ -169,7 +169,7 @@ public class PaymentCalculatorMain extends AppCompatActivity implements View.OnC
                 editTextLoanTerm.setText(null);
                 break;
             case R.id.buttonPaymentMail:
-                String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interest)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanterm)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(monthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(totalInterest)+"\n Total Payment:"+new DecimalFormat("##.##").format(TotalPayment)+"\n Annual Payment:"+new DecimalFormat("##.##").format(AnnualPayment);
+                String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interest)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(loanterm)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(monthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(totalInterest)+"\n Total Payment:"+new DecimalFormat("##.##").format(TotalPayment)+"\n Annual Payment:"+new DecimalFormat("##.##").format(AnnualPayment);
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                 email.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");

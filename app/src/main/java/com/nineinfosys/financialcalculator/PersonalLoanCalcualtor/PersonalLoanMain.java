@@ -39,10 +39,10 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
     LinearLayout layoutresult,layoutWarning,layoutActuallyreceived;
     Spinner spinnerMonthlist,spinnerPaidType,spinnerIsA,spinnerMonth;
     personalloan personalloan;
-    RadioGroup radioGroupPaid,radioGroupIsatype;
+
     double loanAmount,interestRate,insurance,originationamount,monthlyPayment,totalcalmonth,TotalPayment,AnnualPayment,totalInsurance,totalInterest,totalFee,totalAll,actuallyReceived,payoffyear;
     int year,month,startyear;
-    RadioButton radiButton,radioButtonIsA;
+
     String strPaid,strIsAtype,startmonth;
     String payoffmonth;
 
@@ -80,7 +80,6 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
         editTextInsurance=(EditText)findViewById(R.id.editTextInsurance);
         editTextInterestRate=(EditText)findViewById(R.id.editTextLoanInterestRate);
         editTextyear=(EditText)findViewById(R.id.editTextLoantermyear);
-       // editTextMonth=(EditText)findViewById(R.id.editTextLoantermmonth);
         editTextStartYear=(EditText)findViewById(R.id.editTextstartyear);
         editTextOriginationFee=(EditText)findViewById(R.id.editTextOriginationFee);
 
@@ -339,7 +338,7 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
                break;
             case R.id.buttonReport:
                 Intent i2 = new Intent(this, PersonalLoanReport.class);
-                // Toast.makeText(this, " ToatalInterest" + interestRate, Toast.LENGTH_SHORT).show();
+
                 i2.putExtra("PrincipalAmount", loanAmount);
                 i2.putExtra("interestRate", interestRate);
                 i2.putExtra("loanPeriod", totalcalmonth);
@@ -363,7 +362,7 @@ public class PersonalLoanMain extends AppCompatActivity implements View.OnClickL
             case R.id.buttonPersonalLoanEmailSend:
 
 
-                String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(totalcalmonth)+"\n Insurance:"+new DecimalFormat("##.##").format(insurance)+"\n Start Month:"+startmonth+"\n Start Year:"+new DecimalFormat("##.##").format(startyear)+ "\n Origination Amount:"+new DecimalFormat("##.##").format(originationamount)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(monthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(totalInterest)+"\n Total Insurance Amount:"+new DecimalFormat("##.##").format(totalInsurance)+"\n Total Origination Amount:"+new DecimalFormat("##.##").format(totalFee)+
+                String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(totalcalmonth)+"\n Insurance:"+new DecimalFormat("##.##").format(insurance)+"\n Start Month:"+startmonth+"\n Start Year:"+new DecimalFormat("##.##").format(startyear)+ "\n Origination Amount:"+new DecimalFormat("##.##").format(originationamount)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(monthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(totalInterest)+"\n Total Insurance Amount:"+new DecimalFormat("##.##").format(totalInsurance)+"\n Total Origination Amount:"+new DecimalFormat("##.##").format(totalFee)+
                         "\n Total Interest+Insurance :"+new DecimalFormat("##.##").format(totalAll)+"\n Total Payment:"+new DecimalFormat("##.##").format(TotalPayment)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(AnnualPayment)+ "\n Actually Received Amount:"+new DecimalFormat("##.##").format(actuallyReceived)+"\n Pay off Month :"+(payoffmonth) +"\n Pay off Year :"+(payoffyear);
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{ });

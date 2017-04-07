@@ -424,6 +424,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
                 ads:adSize="SMART_BANNER"
+                android:layout_marginTop="5dp"
                 ads:adUnitId="@string/banner_ad_unit_id">
 
             </com.google.android.gms.ads.AdView>

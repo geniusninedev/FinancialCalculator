@@ -36,9 +36,9 @@ import java.util.List;
 
 public class LoanComparisonCalculatorMain extends AppCompatActivity implements View.OnClickListener {
     // declartaion of the designing tool and supported classes
-    EditText edittextLaonAmount, edittextInterestRate, edittextLoanMonths, edittextExtraPayment, edittextPropertytax, edittextInsurance, edittextPMI, edittextPropertyPrice, editTextalertpropertyprice, edittextalertdownpayment;
+    EditText edittextLaonAmount, edittextInterestRate, edittextLoanMonths,editTextalertpropertyprice, edittextalertdownpayment;
     EditText editTextInterestRateSecond,editTextMonthSecond;
-    Button buttonLoanCalculate, buttonLoanCalcvalue, buttonloanReset, buttonLoanEmail, buttonLoanReport, buttonLoanAortization;
+    Button buttonLoanCalculate, buttonLoanCalcvalue, buttonloanReset, buttonLoanEmail;
     TextView textViewMonthlyPayment, textViewTotalPayment, textViewTotalInterest, textViewAnnualPayment, textViewMortgageConstant,textViewMonthlyPaymentSecond,textViewTotalPaymentSecond,textViewTotalInterestSecond,textViewAnnualPaymentSecond,textViewMortgageConstantSecond;
     LinearLayout layoutDisplayResult,layoutwarning;
     Spinner spinneralerttaxtype;
@@ -280,8 +280,8 @@ public class LoanComparisonCalculatorMain extends AppCompatActivity implements V
                 break;
 
             case R.id.buttonLoanEmail:
-                String message=" Loan Term 1"+"\n\nLoan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(LoanMonthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(LoanInterest)+"\n Total Payment:"+new DecimalFormat("##.##").format(LoanTotalPayment)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(LoanAnnualPayment)+
-                "\n\n Loan Term 2"+"\n\nLoan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRateSecond)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriodSecond)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(LoanMonthlyPaymentSecond)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(LoanInterestSecond)+"\n Total Payment:"+new DecimalFormat("##.##").format(LoanTotalPaymentSecond)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(LoanAnnualPaymentSecond);
+                String message=" Loan Term 1"+"\n\nLoan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(LoanMonthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(LoanInterest)+"\n Total Payment:"+new DecimalFormat("##.##").format(LoanTotalPayment)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(LoanAnnualPayment)+
+                "\n\n Loan Term 2"+"\n\nLoan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRateSecond)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriodSecond)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(LoanMonthlyPaymentSecond)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(LoanInterestSecond)+"\n Total Payment:"+new DecimalFormat("##.##").format(LoanTotalPaymentSecond)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(LoanAnnualPaymentSecond);
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                 email.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");

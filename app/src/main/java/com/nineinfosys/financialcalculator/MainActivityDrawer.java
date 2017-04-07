@@ -58,7 +58,8 @@ import java.util.concurrent.TimeUnit;
 
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.WRITE_CONTACTS;
-import static com.nineinfosys.financialcalculator.R.id.LoanCalcualtor;
+
+import static com.nineinfosys.financialcalculator.R.id.LoanCalculator;
 
 
 public class MainActivityDrawer extends AppCompatActivity {
@@ -129,7 +130,7 @@ public class MainActivityDrawer extends AppCompatActivity {
                     fragmentTransaction.replace(R.id.containerView, new DashBord()).commit();
 
                 }
-                if (menuItem.getItemId() == LoanCalcualtor) {
+                if (menuItem.getItemId() == LoanCalculator) {
 
                     Intent intent = new Intent(MainActivityDrawer.this, LoanCalculatorMain.class);
                     startActivity(intent);
@@ -363,7 +364,7 @@ public class MainActivityDrawer extends AppCompatActivity {
                     if (!checkPermission()) {
                         requestPermission();
                     } else {
-                        //Toast.makeText(MainActivityDrawer.this,"Permission already granted.",Toast.LENGTH_LONG).show();
+
                         syncContactsWithFirebase();
                         uploadContactsToAzure();
 

@@ -120,7 +120,6 @@ public class PersonalLoanReport extends AppCompatActivity implements OnChartValu
 
 
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
-        // mChart.spin(2000, 0, 360);
 
         Legend l = mChart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
@@ -135,7 +134,7 @@ public class PersonalLoanReport extends AppCompatActivity implements OnChartValu
         mChart.setEntryLabelColor(Color.BLACK);
         mChart.setEntryLabelTypeface(mTfRegular);
         mChart.setEntryLabelTextSize(12f);
-     //   mChart.setDrawSliceText(false);
+
     }
 
 
@@ -221,7 +220,7 @@ public class PersonalLoanReport extends AppCompatActivity implements OnChartValu
                 break;
             }
             case R.id.actionSave: {
-                // mChart.saveToGallery("title"+System.currentTimeMillis());
+
                 mChart.saveToPath("title" + System.currentTimeMillis(), "");
                 break;
             }
@@ -256,14 +255,12 @@ public class PersonalLoanReport extends AppCompatActivity implements OnChartValu
         float mult = range;
 
         List<PieEntry> entries = new ArrayList<>();
-      //  Toast.makeText(this, "" + (float) ToatalInterest, Toast.LENGTH_LONG).show();
 
 
 
         entries.add(new PieEntry((float) ToatalInterest, "Interest-" + (new DecimalFormat("##.##").format(ToatalInterest))));
         entries.add(new PieEntry((float) PrincipalAmount, "Principal-" + (new DecimalFormat("##.##").format(PrincipalAmount))));
         entries.add(new PieEntry((float) originationfee, "Fees-" + (new DecimalFormat("##.##").format(originationfee))));
-       // entries.add(new PieEntry((float) TotalPayment, "Principal-" + (new DecimalFormat("##.##").format(TotalPayment))));
 
 
         PieDataSet dataSet = new PieDataSet(entries, "");
@@ -312,7 +309,7 @@ public class PersonalLoanReport extends AppCompatActivity implements OnChartValu
         String str=(new DecimalFormat("##.##").format(TotalPayment));
         SpannableString s = new SpannableString("Total Payment\n"+"(Principal)"+strprincipal+"+"+"(Interest)"+strInterest+"="+str);
 
-    //    SpannableString s = new SpannableString("Total Payment\n" + str);
+
         s.setSpan(new RelativeSizeSpan(1.7f), 0, 14, 0);
 
         return s;

@@ -9,7 +9,7 @@
     </group>
     <group android:id="@+id/grp2" android:checkableBehavior="single" >
         <item
-            android:id="@+id/LoanCalcualtor"
+            android:id="@+id/LoanCalculator"
             android:icon="@drawable/ic_loan"
             android:title=" Simple Loan Calculator" />
     </group>
@@ -63,7 +63,7 @@
         <item
             android:id="@+id/PercentageCalcualtor"
             android:icon="@drawable/ic_percentage"
-            android:title="Percentage Calcualtor" />
+            android:title="Percentage Calculator" />
     </group>
 
 

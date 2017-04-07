@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompoundReport extends AppCompatActivity implements OnChartValueSelectedListener {
-    double PrincipalAmount, ToatalInterest,TotalPayment,interestRate,loanPeriod,LoanMonthlyPayment,Compoundsperyear,LoanAnnualPayment,InterestAmount,compoundAmount,APY;
+    double PrincipalAmount,interestRate,loanPeriod,Compoundsperyear,InterestAmount,compoundAmount,APY;
     private PieChart mChart;
     private double[] mParties;
     private Typeface mTfRegular;
@@ -106,7 +106,7 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
 
 
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
-        // mChart.spin(2000, 0, 360);
+
 
         Legend l = mChart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
@@ -121,7 +121,7 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
         mChart.setEntryLabelColor(Color.BLACK);
         mChart.setEntryLabelTypeface(mTfRegular);
         mChart.setEntryLabelTextSize(12f);
-     //   mChart.setDrawSliceText(false);
+
     }
 
 
@@ -259,7 +259,7 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
         colors.add(ColorTemplate.getHoloBlue());
 
         dataSet.setColors(colors);
-        //dataSet.setSelectionShift(0f);
+
 
         PieData data = new PieData(dataSet);
         data.setValueFormatter(new PercentFormatter());
