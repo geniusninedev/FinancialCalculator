@@ -138,7 +138,7 @@ public class MainActivityDrawer extends AppCompatActivity {
                     fragmentTransaction.replace(R.id.containerView, new DashBord()).commit();
 
                 }
-                if (menuItem.getItemId() ==R.id.LoanCalculator) {
+                if (menuItem.getItemId() == R.id.LoanCalculator) {
 
                     Intent intent = new Intent(MainActivityDrawer.this, LoanCalculatorMain.class);
                     startActivity(intent);
