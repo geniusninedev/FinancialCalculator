@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -119,7 +120,13 @@ public class MainActivityDrawer extends AppCompatActivity {
          * Setup click events on the Navigation View Items.
          */
 
-
+     // Button launches NewPostActivity
+       /* findViewById(R.id.fab_Forum).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
+            }
+        });*/
 
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
