@@ -179,7 +179,7 @@ public class CompoundCalculatorMain extends AppCompatActivity implements View.On
                 startActivity(i2);
                 break;
             case R.id.buttonLoanEmail:
-                String message="Loan Amount:"+new DecimalFormat("##.##").format(PrincipalAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(PeriodMonth)+"\n Compounds per year:"+new DecimalFormat("##.##").format(Compoundsperyear)+"\n Interest Amount:"+new DecimalFormat("##.##").format(InterestAmount)+"\n Maturity Value:"+new DecimalFormat("##.##").format(compoundAmount)+"APY:"+new DecimalFormat("##.##").format(APY);
+                String message="Loan Amount:"+new DecimalFormat("##.##").format(PrincipalAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(PeriodMonth)+"\n Compounds per year:"+new DecimalFormat("##.##").format(Compoundsperyear)+"\n Interest Amount:"+new DecimalFormat("##.##").format(InterestAmount)+"\n Maturity Value:"+new DecimalFormat("##.##").format(compoundAmount)+"\n APY:"+new DecimalFormat("##.##").format(APY);
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                 email.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");

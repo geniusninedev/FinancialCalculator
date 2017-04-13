@@ -41,6 +41,7 @@ import com.nineinfosys.financialcalculator.BusinessCalcualtor.BusinessCalcualtor
 
 import com.nineinfosys.financialcalculator.CompoundInterestCalcualtor.CompoundCalculatorMain;
 import com.nineinfosys.financialcalculator.DashBord.DashBord;
+import com.nineinfosys.financialcalculator.Forum.ForumActivity;
 import com.nineinfosys.financialcalculator.LoanCalcualtor.LoanCalculatorMain;
 import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
 import com.nineinfosys.financialcalculator.Contacts.Contacts;
@@ -121,12 +122,12 @@ public class MainActivityDrawer extends AppCompatActivity {
          */
 
      // Button launches NewPostActivity
-       /* findViewById(R.id.fab_Forum).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.fab_Forum).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
             }
-        });*/
+        });
 
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

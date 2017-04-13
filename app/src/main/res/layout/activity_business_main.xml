@@ -296,9 +296,10 @@
                     android:inputType="number"
                     android:ems="10"
                     android:digits="0123456789."
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:background="@android:drawable/editbox_background"
                     android:id="@+id/editTextOtherFee"
                     android:layout_weight="1" />
+
                 <TextView
                     android:text=" INR"
                     android:layout_width="100dp"

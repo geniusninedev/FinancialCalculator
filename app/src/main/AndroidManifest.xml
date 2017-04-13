@@ -53,6 +53,17 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Forum.NewPostActivity"
+            android:label="Add New Post"/>
+        <activity android:name=".Forum.PostDetailActivity"
+            android:label="Comment"/>
+
+        <activity android:name=".Forum.ForumActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="Forum"></activity>
+
+
         <activity
             android:name=".LoanCalcualtor.LoanCalculatorMain"
             android:configChanges="orientation|screenSize|keyboardHidden">
