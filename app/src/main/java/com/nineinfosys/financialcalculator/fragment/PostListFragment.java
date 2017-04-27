@@ -3,6 +3,7 @@ package com.nineinfosys.financialcalculator.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -32,7 +33,7 @@ public abstract class PostListFragment extends Fragment {
     // [START define_database_reference]
     private DatabaseReference mDatabase;
     // [END define_database_reference]
-
+    private SwipeRefreshLayout mSwipeRefresh;
     private FirebaseRecyclerAdapter<Post, PostViewHolder> mAdapter;
     private RecyclerView mRecycler;
     private LinearLayoutManager mManager;
@@ -47,13 +48,29 @@ public abstract class PostListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_all_posts, container, false);
 
         // [START create_database_reference]
-        mDatabase = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id)).child("Forum");
-        // [END create_database_reference]
-
+        mSwipeRefresh = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefresh);
         mRecycler = (RecyclerView) rootView.findViewById(R.id.messages_list);
         mRecycler.setHasFixedSize(true);
 
+        mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshItems();
+            }
+        });
+
         return rootView;
+
+    }
+
+    void refreshItems() {
+        onItemsLoadComplete();
+    }
+
+    void onItemsLoadComplete() {
+
+        mRecycler.setAdapter(mAdapter);
+        mSwipeRefresh.setRefreshing(false);
     }
 
     @Override

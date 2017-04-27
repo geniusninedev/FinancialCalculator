@@ -192,11 +192,7 @@ public class LoanReport extends AppCompatActivity implements OnChartValueSelecte
                 mChart.invalidate();
                 break;
             }
-            case R.id.actionSave: {
-                // mChart.saveToGallery("title"+System.currentTimeMillis());
-                mChart.saveToPath("title" + System.currentTimeMillis(), "");
-                break;
-            }
+
             case R.id.actionTogglePercent:
                 mChart.setUsePercentValues(!mChart.isUsePercentValuesEnabled());
                 mChart.invalidate();

@@ -37,21 +37,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.http.OkHttpClientFactory;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
-import com.nineinfosys.financialcalculator.BusinessCalcualtor.BusinessCalcualtorMain;
 
-import com.nineinfosys.financialcalculator.CompoundInterestCalcualtor.CompoundCalculatorMain;
+import com.nineinfosys.financialcalculator.Calculators.CalculatorFragment;
 import com.nineinfosys.financialcalculator.DashBord.DashBord;
 import com.nineinfosys.financialcalculator.Forum.ForumActivity;
 import com.nineinfosys.financialcalculator.LoanCalcualtor.LoanCalculatorMain;
-import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
 import com.nineinfosys.financialcalculator.Contacts.Contacts;
 import com.nineinfosys.financialcalculator.LoginActivity.Login;
-import com.nineinfosys.financialcalculator.MarginCalcualtor.CurrencyExchange.CurrencyExchangeMain;
-import com.nineinfosys.financialcalculator.MarginCalcualtor.profitMargin.ProfitMarginMain;
-import com.nineinfosys.financialcalculator.MarginCalcualtor.stocktrading.StockTradingCalculator;
-import com.nineinfosys.financialcalculator.PaymentCalcualtor.PaymentCalculatorMain;
-import com.nineinfosys.financialcalculator.PercentageCalcualtor.PercentageCalcualtorMain;
-import com.nineinfosys.financialcalculator.PersonalLoanCalcualtor.PersonalLoanMain;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.net.MalformedURLException;
@@ -61,7 +53,6 @@ import java.util.concurrent.TimeUnit;
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.WRITE_CONTACTS;
 
-import static com.nineinfosys.financialcalculator.R.id.LoanCalculator;
 
 
 public class MainActivityDrawer extends AppCompatActivity {
@@ -116,7 +107,7 @@ public class MainActivityDrawer extends AppCompatActivity {
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mNavigationView.setItemIconTintList(null);
-        mFragmentTransaction.replace(R.id.containerView, new DashBord()).commit();
+        mFragmentTransaction.replace(R.id.containerView, new CalculatorFragment()).commit();
         /**
          * Setup click events on the Navigation View Items.
          */
@@ -134,64 +125,11 @@ public class MainActivityDrawer extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 mDrawerLayout.closeDrawers();
                 if (menuItem.getItemId() == R.id.DashBord) {
-                    FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new DashBord()).commit();
-
-                }
-                if (menuItem.getItemId() == R.id.LoanCalculator) {
-
                     Intent intent = new Intent(MainActivityDrawer.this, LoanCalculatorMain.class);
                     startActivity(intent);
-                }
-                if (menuItem.getItemId() == R.id.PaymentCalcualtor) {
 
-                    Intent intent = new Intent(MainActivityDrawer.this, PaymentCalculatorMain.class);
-                    startActivity(intent);
-                }
-                if (menuItem.getItemId() == R.id.LoanComparisonCalcualtor) {
-
-
-                    Intent intent = new Intent(MainActivityDrawer.this, LoanComparisonCalculatorMain.class);
-                    startActivity(intent);
                 }
 
-                if (menuItem.getItemId() == R.id.PersonalLoanCalcualtor) {
-
-                    Intent intent=new Intent(MainActivityDrawer.this,PersonalLoanMain.class);
-                    startActivity(intent);
-                }
-                if (menuItem.getItemId() == R.id.BusinessLoanCalcualtor) {
-
-                    Intent intent = new Intent(MainActivityDrawer.this, BusinessCalcualtorMain.class);
-                    startActivity(intent);
-                }
-
-
-                if (menuItem.getItemId() == R.id.PercentageCalcualtor) {
-
-                    Intent intent = new Intent(MainActivityDrawer.this, PercentageCalcualtorMain.class);
-                    startActivity(intent);
-                }
-                if (menuItem.getItemId() == R.id.CompoundInterestCalculator) {
-
-                    Intent intent = new Intent(MainActivityDrawer.this, CompoundCalculatorMain.class);
-                    startActivity(intent);
-                }
-                if (menuItem.getItemId() == R.id.ProfitMarginCalculator) {
-
-                        Intent intent=new Intent(MainActivityDrawer.this,ProfitMarginMain.class);
-                        startActivity(intent);
-                }
-                if (menuItem.getItemId() == R.id.StockTradingMarginCalculator) {
-
-                        Intent intent = new Intent(MainActivityDrawer.this, StockTradingCalculator.class);
-                        startActivity(intent);
-                    }
-               if (menuItem.getItemId() == R.id.CurrencyExchangeMarginCalculator) {
-
-                    Intent intent=new Intent(MainActivityDrawer.this, CurrencyExchangeMain.class);
-                    startActivity(intent);
-                }
 
                 //communicate
                 if (menuItem.getItemId() == R.id.Share) {

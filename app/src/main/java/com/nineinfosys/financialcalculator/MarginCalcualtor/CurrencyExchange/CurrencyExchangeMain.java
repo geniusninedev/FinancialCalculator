@@ -1,15 +1,12 @@
 package com.nineinfosys.financialcalculator.MarginCalcualtor.CurrencyExchange;
 
-
-
-/**
- * Created by Divya on 4-02-2017.
- */
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
@@ -19,18 +16,16 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.nineinfosys.financialcalculator.LoanComaprisonCalcualtor.LoanComparisonCalculatorMain;
 import com.nineinfosys.financialcalculator.R;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CurrencyExchangeMain extends AppCompatActivity implements View.OnClickListener{
+public class CurrencyExchangeMain extends Fragment implements View.OnClickListener{
     EditText edittextExchangeRate, edittextUnits;
     TextView textViewResultAmontRequired;
     LinearLayout layoutDisplayResult,layoutWarning;
@@ -40,35 +35,34 @@ public class CurrencyExchangeMain extends AppCompatActivity implements View.OnCl
     double exchangRate,Units;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.currencyexchange_main);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.currencyexchange_main, null);
+
 
         //keyboard hidden first time
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        //customize toolbar
+        MobileAds.initialize(getActivity(), getString(R.string.ads_app_id));
+        AdView mAdView = (AdView) v.findViewById(R.id.adViewCurrencyCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+       /* //customize toolbar
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Currency Exchange Calcualtor");
+*/
+        layoutDisplayResult=(LinearLayout)v.findViewById(R.id.layoutDisplayResult);
+        layoutWarning=(LinearLayout)v.findViewById(R.id.layoutWarning);
 
-        //Adview added in Activity
-        MobileAds.initialize(CurrencyExchangeMain.this, getString(R.string.ads_app_id));
-        AdView mAdView = (AdView)this.findViewById(R.id.adViewCurrencyChange);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        layoutDisplayResult=(LinearLayout)findViewById(R.id.layoutDisplayResult);
-        layoutWarning=(LinearLayout)findViewById(R.id.layoutWarning);
-
-        edittextExchangeRate=(EditText)findViewById(R.id.editTextExchangeRate);
-        edittextUnits=(EditText)findViewById(R.id.editTextUnit);
-        spinnerMarginRatio=(Spinner)findViewById(R.id.spinnerMarginRatio);
-        textViewResultAmontRequired=(TextView) findViewById(R.id.textViewResultAmountRequired);
-        buttonCalculate=(Button)findViewById(R.id.buttonCalculate);
-        buttonReset=(Button)findViewById(R.id.buttoncurrencyReset);
+        edittextExchangeRate=(EditText)v.findViewById(R.id.editTextExchangeRate);
+        edittextUnits=(EditText)v.findViewById(R.id.editTextUnit);
+        spinnerMarginRatio=(Spinner)v.findViewById(R.id.spinnerMarginRatio);
+        textViewResultAmontRequired=(TextView) v.findViewById(R.id.textViewResultAmountRequired);
+        buttonCalculate=(Button)v.findViewById(R.id.buttonCalculate);
+        buttonReset=(Button)v.findViewById(R.id.buttoncurrencyReset);
 
         List<String> marginratio = new ArrayList<String>();
         marginratio.add("1:1");
@@ -80,7 +74,7 @@ public class CurrencyExchangeMain extends AppCompatActivity implements View.OnCl
         marginratio.add("40:1");
         marginratio.add("50:1");
         // Creating adapter for spinner
-        ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, marginratio);
+        ArrayAdapter<String> Adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, marginratio);
 
         // Drop down layout style - list view with radio button
         Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -89,6 +83,7 @@ public class CurrencyExchangeMain extends AppCompatActivity implements View.OnCl
 
         buttonCalculate.setOnClickListener(this);
         buttonReset.setOnClickListener(this);
+        return v;
     }
     private void calcualteCurrencyMargin() {
         if (edittextExchangeRate.getText().toString().trim().equals("") && edittextUnits.getText().toString().trim().equals("")) {
@@ -105,8 +100,8 @@ public class CurrencyExchangeMain extends AppCompatActivity implements View.OnCl
             layoutDisplayResult.setVisibility(View.GONE);
         } else {
             //for hiding keyboard
-            InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+            InputMethodManager inputManager = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
 
             exchangRate = Double.parseDouble(edittextExchangeRate.getText().toString().trim());
             Units = Double.parseDouble(edittextUnits.getText().toString().trim());
@@ -171,9 +166,9 @@ public class CurrencyExchangeMain extends AppCompatActivity implements View.OnCl
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-
+            // Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-
+            // Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
         }
     }
 

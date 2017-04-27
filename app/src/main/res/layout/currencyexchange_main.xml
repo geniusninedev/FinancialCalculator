@@ -3,13 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:ads="http://schemas.android.com/apk/res-auto">
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="10dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -39,6 +37,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:orientation="horizontal">
 
                 <TextView
@@ -75,6 +74,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -117,6 +117,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -138,22 +139,19 @@
                     android:id="@+id/editTextUnit"
                     android:layout_weight="1" />
             </LinearLayout>
-
             <com.google.android.gms.ads.AdView
-                android:id="@+id/adViewCurrencyChange"
+                android:id="@+id/adViewCurrencyCalculator"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
                 ads:adSize="SMART_BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id">
-
-            </com.google.android.gms.ads.AdView>
+                ads:adUnitId="@string/banner_ad_unit_id"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 >
                 <Button
                     android:id="@+id/buttoncurrencyReset"

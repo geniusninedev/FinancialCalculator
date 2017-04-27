@@ -15,17 +15,16 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".LoginActivity.CustomApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_financial"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".LoginActivity.CustomApplication">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivityDrawer"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            >
+            android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,29 +40,17 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
+
         <activity
-            android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".Forum.NewPostActivity"
-            android:label="Add New Post"/>
-        <activity android:name=".Forum.PostDetailActivity"
-            android:label="Comment"/>
-
-        <activity android:name=".Forum.ForumActivity"
+            android:name=".Forum.NewPostActivity"
+            android:label="Add New Post" />
+        <activity
+            android:name=".Forum.PostDetailActivity"
+            android:label="Comment" />
+        <activity
+            android:name=".Forum.ForumActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="Forum"></activity>
-
-
+            android:label="Forum" />
         <activity
             android:name=".LoanCalcualtor.LoanCalculatorMain"
             android:configChanges="orientation|screenSize|keyboardHidden">
@@ -127,7 +114,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
-
         <activity
             android:name=".LoanComaprisonCalcualtor.LoanComparisonCalculatorMain"
             android:configChanges="orientation|screenSize|keyboardHidden">
@@ -135,7 +121,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
-
         <activity
             android:name=".Report.BusinessLoanFullReport"
             android:configChanges="orientation|screenSize|keyboardHidden">
@@ -150,27 +135,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
-        <activity
-            android:name=".MarginCalcualtor.CurrencyExchange.CurrencyExchangeMain"
-            android:configChanges="orientation|screenSize|keyboardHidden">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivityDrawer" />
-        </activity>
-        <activity
-            android:name=".MarginCalcualtor.stocktrading.StockTradingCalculator"
-            android:configChanges="orientation|screenSize|keyboardHidden">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivityDrawer" />
-        </activity>
-        <activity
-            android:name=".MarginCalcualtor.profitMargin.ProfitMarginMain"
-            android:configChanges="orientation|screenSize|keyboardHidden">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivityDrawer" />
-        </activity>
+
         <activity
             android:name=".PercentageCalcualtor.PercentageCalcualtorMain"
             android:configChanges="orientation|screenSize|keyboardHidden">
@@ -206,7 +171,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
-
         <activity
             android:name=".RequestApp"
             android:configChanges="orientation|screenSize|keyboardHidden">
@@ -214,21 +178,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
-        <activity android:name=".DashBord.ShowFeeds"></activity>
-
-        <activity android:name=".LoginActivity.Login"
+        <activity android:name=".DashBord.ShowFeeds" />
+        <activity
+            android:name=".LoginActivity.Login"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:windowSoftInputMode="stateHidden|adjustResize">
-        </activity>
-
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity
             android:name=".LoginActivity.SignUp"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation">
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity.Login" />
         </activity>
+        <activity android:name=".Calculators.MarginCalculators"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivityDrawer" /></activity>
     </application>
 
 </manifest>

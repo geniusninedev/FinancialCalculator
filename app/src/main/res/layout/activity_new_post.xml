@@ -6,9 +6,9 @@
     tools:context="Forum.NewPostActivity"
     android:orientation="vertical">
 
-    <!--<include
+    <include
         android:id="@+id/app_bar"
-        layout="@layout/app_bar" />-->
+        layout="@layout/app_bar" />
     <EditText
         android:id="@+id/field_title"
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
+        android:layout_below="@+id/app_bar"
         android:hint="Title"
         android:maxLines="1"
         />

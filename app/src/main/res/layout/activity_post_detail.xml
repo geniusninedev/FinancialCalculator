@@ -6,15 +6,16 @@
     tools:context="Forum.NewPostActivity"
     android:orientation="vertical">
 
-   <!-- <include
+    <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar" />
--->
+
     <include
         android:id="@+id/post_author_layout"
         layout="@layout/include_post_author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar"
         android:layout_alignParentLeft="true" />
 
     <include
