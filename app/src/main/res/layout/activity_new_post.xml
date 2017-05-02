@@ -3,12 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="Forum.NewPostActivity"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar" />
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/appcolor"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/app_name" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical" >
     <EditText
         android:id="@+id/field_title"
         android:layout_width="match_parent"
@@ -17,7 +33,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:layout_below="@+id/app_bar"
+
         android:hint="Title"
         android:maxLines="1"
         />
@@ -50,5 +66,6 @@
         android:layout_alignLeft="@+id/field_body"
         android:layout_alignStart="@+id/field_body" /> /
     >
-
+</LinearLayout>
+    </ScrollView>
 </RelativeLayout>

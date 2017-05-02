@@ -104,7 +104,7 @@ public class CalculatorFragment extends Fragment {
 
 
         listCount = new ArrayList<Integer>();
-        listCount.add(R.drawable.ic_loan);
+        listCount.add(R.mipmap.ic_loan_calcualtor);
         listCount.add(R.drawable.ic_payment);
         listCount.add(R.drawable.ic_compound);
         listCount.add(R.drawable.ic_comparison1);

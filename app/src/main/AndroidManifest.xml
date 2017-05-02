@@ -57,7 +57,11 @@
         <activity
             android:name=".Forum.ForumActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="Forum" />
+            android:label="Forum" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivityDrawer" />
+        </activity>
         <activity
             android:name=".LoanCalcualtor.LoanCalculatorMain"
             android:configChanges="orientation|screenSize|keyboardHidden">
@@ -185,7 +189,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivityDrawer" />
         </activity>
-        <activity android:name=".DashBord.ShowFeeds" />
+
         <activity
             android:name=".LoginActivity.Login"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"

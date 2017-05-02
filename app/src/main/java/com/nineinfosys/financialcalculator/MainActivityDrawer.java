@@ -39,7 +39,6 @@ import com.microsoft.windowsazure.mobileservices.http.OkHttpClientFactory;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
 
 import com.nineinfosys.financialcalculator.Calculators.CalculatorFragment;
-import com.nineinfosys.financialcalculator.DashBord.DashBord;
 import com.nineinfosys.financialcalculator.Forum.ForumActivity;
 import com.nineinfosys.financialcalculator.LoanCalcualtor.LoanCalculatorMain;
 import com.nineinfosys.financialcalculator.Contacts.Contacts;
@@ -124,12 +123,6 @@ public class MainActivityDrawer extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 mDrawerLayout.closeDrawers();
-                if (menuItem.getItemId() == R.id.DashBord) {
-                    Intent intent = new Intent(MainActivityDrawer.this, LoanCalculatorMain.class);
-                    startActivity(intent);
-
-                }
-
 
                 //communicate
                 if (menuItem.getItemId() == R.id.Share) {

@@ -8,12 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nineinfosys.financialcalculator.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -21,8 +23,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.nineinfosys.financialcalculator.R;
-
 
 public class SignUp extends AppCompatActivity {
 
@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
         password = (EditText) findViewById(R.id.edit_text_new_password);
 
         mAuth = FirebaseAuth.getInstance();
-        mRef = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id)).child("Users");//.child(getString(R.string.email_data));
+        mRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -105,6 +105,7 @@ public class SignUp extends AppCompatActivity {
         UserLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 startActivity(new Intent(SignUp.this,Login.class));
             }
         });
@@ -189,6 +190,7 @@ public class SignUp extends AppCompatActivity {
         saveNewUser();
         sendEmailVerification();
         signOut();
+        finish();
         startActivity(new Intent(SignUp.this, Login.class));
 
 
@@ -286,5 +288,25 @@ public class SignUp extends AppCompatActivity {
             mProgressDialog.dismiss();
         }
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == android.R.id.home) {
 
+            finish();
+            startActivity(new Intent(SignUp.this, Login.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        startActivity(new Intent(SignUp.this, Login.class));
+    }
 }

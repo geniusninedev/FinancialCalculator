@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/grp1" android:checkableBehavior="single" >
-        <item
-            android:id="@+id/DashBord"
-            android:icon="@drawable/btn_home"
-            android:title="Feeds" />
-    </group>
+
 
     <item
            android:id="@+id/Communicate"

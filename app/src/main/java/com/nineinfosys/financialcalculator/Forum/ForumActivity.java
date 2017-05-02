@@ -6,9 +6,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.nineinfosys.financialcalculator.MainActivityDrawer;
 import com.nineinfosys.financialcalculator.R;
 import com.nineinfosys.financialcalculator.fragment.MyTopPostsFragment;
 import com.nineinfosys.financialcalculator.fragment.RecentPostsFragment;
@@ -29,10 +32,12 @@ public class ForumActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
-      /*  Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Forum");*/
-        // Create the adapter that will return a fragment for each section
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle("Forum");
+        // Create the adapter that will return a fragent for each section
         mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             private final Fragment[] mFragments = new Fragment[] {
                     new RecentPostsFragment(),
@@ -65,8 +70,11 @@ public class ForumActivity extends BaseActivity {
         findViewById(R.id.fab_new_post).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(ForumActivity.this, NewPostActivity.class));
             }
         });
     }
+
+
 }
