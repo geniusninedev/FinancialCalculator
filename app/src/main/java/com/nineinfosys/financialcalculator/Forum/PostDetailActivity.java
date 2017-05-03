@@ -17,17 +17,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nineinfosys.financialcalculator.LoginActivity.User;
+import com.nineinfosys.financialcalculator.R;
+import com.nineinfosys.financialcalculator.models.Comment;
+import com.nineinfosys.financialcalculator.models.Post;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.nineinfosys.financialcalculator.LoginActivity.User;
-import com.nineinfosys.financialcalculator.MainActivityDrawer;
-import com.nineinfosys.financialcalculator.R;
-import com.nineinfosys.financialcalculator.models.Comment;
-import com.nineinfosys.financialcalculator.models.Post;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -336,7 +335,6 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         }
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();

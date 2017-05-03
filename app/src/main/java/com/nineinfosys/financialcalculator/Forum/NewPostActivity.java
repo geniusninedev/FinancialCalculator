@@ -11,15 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.nineinfosys.financialcalculator.LoginActivity.User;
+import com.nineinfosys.financialcalculator.R;
+import com.nineinfosys.financialcalculator.models.Post;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.nineinfosys.financialcalculator.R;
-import com.nineinfosys.financialcalculator.models.Post;
-import com.nineinfosys.financialcalculator.models.User;
-
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,11 +45,11 @@ public class NewPostActivity extends BaseActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Add New Post");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("Add New Post");
         // [START initialize_database_ref]
-        mDatabase = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id));
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         // [END initialize_database_ref]
 
         mTitleField = (EditText) findViewById(R.id.field_title);
@@ -145,7 +144,7 @@ public class NewPostActivity extends BaseActivity {
     private void writeNewPost(String userId, String username, String title, String body, String messageTime, String messageDate) {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
-        String key = mDatabase.child("Forum").child("posts").push().getKey();
+        String key = mDatabase.child(getString(R.string.app_id)).child("Forum").child("posts").push().getKey();
         Post post = new Post(userId, username, title, body,messageTime,messageDate);
         Map<String, Object> postValues = post.toMap();
 
@@ -153,9 +152,11 @@ public class NewPostActivity extends BaseActivity {
         childUpdates.put("/posts/" + key, postValues);
         childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
 
-        mDatabase.child("Forum").updateChildren(childUpdates);
+        mDatabase.child(getString(R.string.app_id)).child("Forum").updateChildren(childUpdates);
     }
     // [END write_fan_out]
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -171,7 +172,6 @@ public class NewPostActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
