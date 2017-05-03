@@ -1,9 +1,11 @@
 package com.nineinfosys.financialcalculator.Forum;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -113,6 +115,7 @@ public class NewPostActivity extends BaseActivity {
 
                         // Finish this Activity, back to the stream
                         setEditingEnabled(true);
+                        startActivity(new Intent(NewPostActivity.this,ForumActivity.class));
                         finish();
                         // [END_EXCLUDE]
                     }
@@ -153,4 +156,27 @@ public class NewPostActivity extends BaseActivity {
         mDatabase.child("Forum").updateChildren(childUpdates);
     }
     // [END write_fan_out]
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == android.R.id.home) {
+            Intent intent=new Intent(NewPostActivity.this,ForumActivity.class);
+            finish();
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(NewPostActivity.this,ForumActivity.class);
+        finish();
+        startActivity(intent);
+    }
 }

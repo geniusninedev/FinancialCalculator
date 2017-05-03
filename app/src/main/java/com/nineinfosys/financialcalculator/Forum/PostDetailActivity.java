@@ -56,7 +56,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Comments");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -330,11 +330,18 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == android.R.id.home) {
-            Intent intent=new Intent(PostDetailActivity.this,MainActivityDrawer.class);
+            Intent intent=new Intent(PostDetailActivity.this,ForumActivity.class);
             finish();
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(PostDetailActivity.this,ForumActivity.class);
+        finish();
+        startActivity(intent);
+    }
 }
