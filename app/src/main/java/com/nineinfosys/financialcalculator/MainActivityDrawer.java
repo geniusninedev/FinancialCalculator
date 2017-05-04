@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -72,7 +73,7 @@ public class MainActivityDrawer extends AppCompatActivity {
     FragmentTransaction mFragmentTransaction;
     ImageView profilePictureView;
     TextView Name,email;
-
+    Handler handler;
    public Toolbar toolbar;
     Intent intent;
     @Override
@@ -115,7 +116,19 @@ public class MainActivityDrawer extends AppCompatActivity {
         findViewById(R.id.fab_Forum).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
+                handler = new Handler();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
+                            }
+                        });
+
+                    }
+                }).start();
             }
         });
 
